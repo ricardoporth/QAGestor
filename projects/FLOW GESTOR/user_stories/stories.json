@@ -1,0 +1,29 @@
+[
+    {
+        "title": "1- Nova aba de usuários (Vencidos 30+ dias)",
+        "description": "como usuario do flow gestor\nquero que ao ao sincronizar um servidor, e ir na aba de usuarios, ela classifique os usuarios por uma colunas a mais - (Vencidos 30+ dias), que deve mostrar usuarios que venceram ha mais de 30 diass",
+        "priority": "Média",
+        "owner": "",
+        "status": "Backlog",
+        "id": "6d082260",
+        "created_at": "2026-01-22 11:06"
+    },
+    {
+        "title": "Botão de Sincronização Manual em Telas Específicas",
+        "description": "Como usuário do Flow Gestor, \nquero ter um botão de sincronização em cada tela (Teste, Usuários e Revendas),\npara que eu possa sincronizar manualmente e de forma separada em cada uma dessas telas.",
+        "priority": "Média",
+        "owner": "",
+        "status": "Backlog",
+        "id": "eafd50f7",
+        "created_at": "2026-01-22 11:36"
+    },
+    {
+        "title": "Solicitação de senha para Exclusão de Servidores Conectados",
+        "description": "Como usuário do Flow Gestor,\n Quero que apareça uma modal solicitando a confirmação da senha antes de realizar a exclusão de um servidor conectado ",
+        "priority": "Média",
+        "owner": "",
+        "status": "Backlog",
+        "id": "64d6d873",
+        "created_at": "2026-01-22 11:56"
+    }
+]

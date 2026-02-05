@@ -1,0 +1,30 @@
+[
+    {
+        "description": "```gherkin\nFuncionalidade: Filtragem de usuários inativos na integração com servidores\n  Como Revendedor\n  Quero que a integração com servidores não inclua usuários da lixeira\n  Para evitar o envio de mensagens para usuários inativos\n\nCenário: Exclusão de usuários da lixeira na sincronização\n  Dado que existem usuários ativos e inativos no servidor\n  E os usuários inativos estão na lixeira\n  Quando a integração com o servidor é realizada\n  Então apenas usuários ativos devem ser sincronizados\n  E usuários da lixeira não devem ser incluídos na sincronização\n```",
+        "type": "Funcional",
+        "id": "29cb615c",
+        "story_id": "2e0702b3",
+        "created_at": "2025-10-17 11:48"
+    },
+    {
+        "description": "Feature: Nova aba de usuários (Vencidos 30+ dias)\n\n  Scenario: Classificação de usuários vencidos por mais de 30 dias\n    Dado que eu sou um usuário do flow gestor\n    E eu sincronizei um servidor\n    quando eu navego até a aba de usuários\n    Então eu devo ver uma coluna adicional chamada 'Vencidos 30+ dias'\n    E essa coluna deve listar os usuários cujo vencimento ocorreu há mais de 30 dias ",
+        "type": "Negócio",
+        "id": "5b448144",
+        "story_id": "6d082260",
+        "created_at": "2026-01-22 11:08"
+    },
+    {
+        "description": "Feature: Botão de Sincronização Manual\nScenario: Sincronização na tela de Teste\nDado que o usuário está na tela de Teste\nQuando ele clica no botão de sincronização\nEntão a sincronização apenas dos dados da tela de Teste é realizada\n\nScenario: Sincronização na tela de Usuários\nDado que o usuário está na tela de Usuários\nQuando ele clica no botão de sincronização\nEntão a sincronização apenas dos dados da tela de Usuários é realizada\n\nScenario: Sincronização na tela de Revendas\nDado que o usuário está na tela de Revendas\nQuando ele clica no botão de sincronização\nEntão a sincronização apenas dos dados da tela de Revendas é realizada",
+        "type": "Negócio",
+        "id": "3d586986",
+        "story_id": "eafd50f7",
+        "created_at": "2026-01-22 11:42"
+    },
+    {
+        "description": "Feature: Exclusão de Servidores Conectados\nScenario: Solicitação de confirmação de senha\nDado que o usuário do Flow Gestor está na tela de exclusão de um servidor conectado\nQuando o usuário tenta excluir o servidor\nEntão uma modal deve aparecer solicitando a confirmação da senha",
+        "type": "Funcional",
+        "id": "cde1ffb7",
+        "story_id": "64d6d873",
+        "created_at": "2026-01-22 11:58"
+    }
+]

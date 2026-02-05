@@ -1,0 +1,37 @@
+[
+    {
+        "description": "dado que estou usando o gerador de doc qa\nquando iniciar um user storios\ne gerar um criteio de teste com bdd\nentao deve ser possivel ir para a proxima fase",
+        "type": "Funcional",
+        "id": 1,
+        "story_id": 1,
+        "created_at": "2025-10-11 20:38"
+    },
+    {
+        "description": "Feature: Criação de História do Usuário com IA\n\n  Scenario: Gerar dados corrigidos com IA\n    Given que estou na tela de criar critério\n    When eu clicar no botão 'Gerar com IA'\n    Then o sistema deve retornar os dados corrigidos com IA",
+        "type": "Funcional",
+        "id": "3ecad144",
+        "story_id": "2ba60f2e",
+        "created_at": "2025-10-11 22:28"
+    },
+    {
+        "description": "dado que sou admin \ne cadastrei o numero dos meus clientes \nqunado estiverem para vencer o plano dos usuarios \no sistema deve enviar uma msg notificando via whatsao",
+        "type": "Funcional",
+        "id": "1fd4b864",
+        "story_id": "cc87ed1c",
+        "created_at": "2025-10-12 00:03"
+    },
+    {
+        "description": "Feature: Notificação de Prazo de Expiração do Plano\n  Como um usuário\n  Eu quero receber uma mensagem pelo WhatsApp sobre o prazo de expiração do meu plano\n  Para que eu possa efetuar o pagamento e evitar o cancelamento do meu plano\n\n  Scenario: Receber notificação de expiração do plano\n    Given que o usuário possui um plano ativo\n    And o prazo de expiração do plano está se aproximando\n    When o sistema envia uma mensagem pelo WhatsApp\n    Then a mensagem deve conter informações sobre a expiração do plano\n    And a mensagem deve incluir um link para gerar o código do PIX\n    And a mensagem deve ser enviada no formato adequado para WhatsApp\n    And o usuário deve receber a mensagem antes da data de expiração",
+        "type": "Funcional",
+        "id": "d1509585",
+        "story_id": "4c91cf02",
+        "created_at": "2025-10-12 11:41"
+    },
+    {
+        "description": "Feature: Notificação de Prazo de Expiração do Plano\n  Como um usuário\n  Eu quero receber uma mensagem pelo WhatsApp sobre o prazo de expiração do meu plano\n  Para que eu possa efetuar o pagamento e evitar o cancelamento do meu plano\n\n  Scenario: Receber notificação de expiração do plano\n    Given que o usuário possui um plano ativo\n    And o plano está prestes a expirar\n    When o sistema envia uma notificação pelo WhatsApp\n    Then o usuário deve receber uma mensagem contendo:\n      | Mensagem                                   |\n      | \"Seu plano está prestes a expirar. Clique no link abaixo para gerar o código do PIX e efetuar o pagamento.\" |\n    And a mensagem deve conter um link para gerar o código do PIX",
+        "type": "Funcional",
+        "id": "a5f1c8af",
+        "story_id": "4c91cf02",
+        "created_at": "2025-10-15 08:40"
+    }
+]

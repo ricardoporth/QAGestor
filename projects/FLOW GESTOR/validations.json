@@ -1,0 +1,74 @@
+[
+    {
+        "bug_id": 2,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [FLOW GESTOR] - [modal de confirmação de exclusão de servidor] - Botão no modo noturno não atualiza cor do texto.\nResultado:\nO teste foi executado no dia 13/10/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O texto do botão deve mudar para uma cor visível e apropriada no modo noturno, garantindo uma boa experiência do usuário' foi observado. O problema original 'A cor do texto do botão não atualiza corretamente quando o aplicativo está no modo noturno' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-10-13 10:02"
+    },
+    {
+        "bug_id": 3,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [FLOW GESTOR] - [tela de login e cadastro] - [Melhoria] Validar formato de email na tela de login e cadastro.\nResultado:\nO teste foi executado no dia 13/10/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Deve ser exibido um feedback ao usuário indicando que o email inserido é inválido.' foi observado. O problema original 'Quando um email inválido é inserido no formulário de cadastro-e/ou login , nenhuma validação de formato de email é exibida ao usuário.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-10-13 10:05"
+    },
+    {
+        "bug_id": 6,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [FLOW GESTOR] - [tela de detalhes de series] - Problema de foco ao navegar entre Temporadas e Episódios.\nResultado:\nO teste foi executado no dia 21/10/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deve manter o foco de navegação na mesma seção ao pressionar 'direita' e direcionar para a seção abaixo apenas ao pressionar a tecla para baixo.' foi observado. O problema original 'Ao navegar para o último item da seleção de Temporadas e pressionar 'direita', o foco de navegação vaza para a seção de seleção de Episódios.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-10-21 10:06"
+    },
+    {
+        "bug_id": 9,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [FLOW GESTOR] - [modais de confirmação] - [FRONT] - [MODAIS] - Ícone de fechamento de modais não está visivel.\nResultado:\nO teste foi executado no dia 30/12/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O ícone de fechamento dos modais deve estar visivel, permitindo que o usuário feche o modal facilmente ao clicar nele.' foi observado. O problema original 'Atualmente, o ícone de fechamento de algumas modais não está visivel ao usuário' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-12-30 10:05"
+    },
+    {
+        "bug_id": 10,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [FLOW GESTOR] - [Membros] - [PROD] - Erro ao fazer upload de imagens de membros .\nResultado:\nO teste foi executado no dia 08/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'A imagem do membro deve ser carregada e salva corretamente após a edição e confirmação das alterações.' foi observado. O problema original 'A imagem do membro carrega corretamente durante a edição, mas não é salva quando as alterações são confirmadas, DANDO ERRO 500' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-08 13:33"
+    },
+    {
+        "bug_id": 12,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [FLOW GESTOR] - [Testes] - Falha ao abrir modal de criação de usuário de teste.\nResultado:\nO teste foi executado no dia 20/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Após clicar no botão Adicionar Testes, a modal de criação de usuário de teste deve ser exibida corretamente, permitindo o cadastro do usuário de teste.' foi observado. O problema original 'Ao clicar no botão Adicionar Testes no módulo Testes, a modal de criação de usuário de teste não é exibida, impedindo o cadastro.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-20 08:36"
+    },
+    {
+        "bug_id": 13,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [FLOW GESTOR] - [CLientes/Testes] - Listagem de Usuários Ativos sendo exibida na tela de Testes.\nResultado:\nO teste foi executado no dia 20/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'A tela Meus Usuários deve exibir apenas os usuários relacionados ao perfil do usuário logado, enquanto a tela Testes deve exibir apenas os usuários cadastrados para participar de testes.' foi observado. O problema original 'As telas Meus Usuários e Testes estão exibindo a mesma listagem de usuários ativos, ao invés de apresentar conjuntos distintos de dados como esperado.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-20 08:37"
+    },
+    {
+        "bug_id": 11,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [FLOW GESTOR] - [Planos e preços] - Ação de Editar não responde (Clientes, Revendedores e Cupons).\nResultado:\nO teste foi executado no dia 21/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deve permitir a edição de clientes, revendedores e cupons de desconto criados ao clicar em 'Editar', apresentando imediatamente a interface de edição correspondente.' foi observado. O problema original 'A funcionalidade de edição não está funcionando para Clientes, Revendedores e Cupons de Desconto. Ao clicar na opção Editar (via menu de três pontos), nenhuma ação é executada.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-21 12:36"
+    },
+    {
+        "bug_id": 17,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [FLOW GESTOR] - [Tela de Criação de Revendedor – Flow Gestor] - Validação de créditos mínimos na criação de revendedores - Comun e MAster.\nResultado:\nO teste foi executado no dia 21/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O formulário de criação de revendedores deve conter validações de créditos mínimos, evitando erros na integração com a WPlay:\n\nRevendedor Comum → mínimo de 10 créditos\nRevendedor Master → mínimo de 50 créditos\n\nO sistema deve:\nImpedir o envio do formulário com créditos abaixo do permitido\nExibir uma mensagem clara de validação ao usuário\nGarantir que apenas dados válidos sejam enviados para a WPlay, evitando bloqueios e erros na sincronização' foi observado. O problema original 'O sistema permite tentar criar o revendedor com uma quantidade de créditos inferior ao mínimo exigido pela WPlay. Ao enviar a solicitação, a WPlay barra a criação, o Flow Gestor retorna erro e o usuário não é previamente informado da regra de créditos mínimos.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-21 12:41"
+    },
+    {
+        "bug_id": 15,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [FLOW GESTOR] - [Teste] - Falha na atualização automática da página após criação de novo teste.\nResultado:\nO teste foi executado no dia 21/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Após a criação do teste, a página deve atualizar automaticamente a lista de testes, exibindo imediatamente o novo teste criado, sem necessidade de recarregar manualmente a página.' foi observado. O problema original 'Após a criação do teste, a página não é atualizada automaticamente para exibir o novo teste criado. É necessário recarregar manualmente a página para visualizar o novo teste.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-21 14:48"
+    },
+    {
+        "bug_id": 22,
+        "status": "Reprovado",
+        "report": "[Validação de Teste - ❌ REPROVADO]\nFeature/Bug Testado: [FLOW GESTOR] - [Tela de Edição de Cupom de Desconto – Flow Gestor] - Erro ao atualizar campo Target Audience ao editar cupom de desconto.\nResultado:\nO teste foi executado no dia 21/01/2026 e a correção foi REPROVADA.\nDetalhes:\nO problema original ainda ocorre. \n'Apesar de o campo Target Audience ser alterado no frontend (select), ao salvar, o cupom continua com o valor original. Por exemplo, permanece como Revendedores, mesmo após selecionar Clientes. As demais informações do cupom são salvas corretamente.'\n\n\nO comportamento esperado não foi atingido.",
+        "date": "2026-01-21 14:51"
+    },
+    {
+        "bug_id": 5,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [FLOW GESTOR] - [Drawer de Conectar gatway de pagamento] - Correção de URL de Webhook para sincronização com o Bpix, e wplay.\nResultado:\nO teste foi executado no dia 21/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O URL de webhook no drawer de gateway deve estar correto para permitir a sincronização correta com o Bpix.' foi observado. O problema original 'O URL de webhook no drawer de gateway não está correto, impedindo a sincronização adequada com o Bpix.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-21 22:51"
+    }
+]

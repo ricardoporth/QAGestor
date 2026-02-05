@@ -1,0 +1,29 @@
+[
+    {
+        "title": "Feature: Nova aba de usuários (Vencidos 30+ dias)",
+        "steps": "Scenario: Classificação de usuários vencidos por mais de 30 dias\nDado que eu sou um usuário do flow gestor\nE eu sincronizei um servidor    quando eu navego até a aba de usuários\nEntão eu devo ver uma coluna adicional chamada 'Vencidos 30+ dias'\nE essa coluna deve listar os usuários cujo vencimento ocorreu há mais de 30 dias ",
+        "expected": "A coluna 'Vencidos 30+ dias' deve estar visível na aba de usuários, e ela deve conter uma lista de usuários que têm datas de vencimento anteriores a 30 dias a partir da data atual.",
+        "preconditions": "Ter usuarios expirados a mais de 30 dias nos outros servidores (wplay tvs) com ",
+        "id": "6db9da66",
+        "criteria_id": "5b448144",
+        "created_at": "2026-01-22 11:10"
+    },
+    {
+        "title": "Feature: Botão de Sincronização Manual",
+        "steps": "Scenario: Sincronização na tela de TesteDado que o usuário está na tela de TesteQuando ele clica no botão de sincronização\nEntão a sincronização apenas dos dados da tela de Teste é realizada\n\nScenario: Sincronização na tela de Usuários\nDado que o usuário está na tela de Usuários\nQuando ele clica no botão de sincronização\nEntão a sincronização apenas dos dados da tela de Usuários é realizada\n\nScenario: Sincronização na tela de RevendasDado que o usuário está na tela de Revendas\nQuando ele clica no botão de sincronização\nEntão a sincronização apenas dos dados da tela de Revendas é realizada",
+        "expected": "A sincronização dos dados é realizada corretamente em cada uma das telas sem afetar os dados das outras telas.",
+        "preconditions": "ter alguma alteração (craição de usuarios, testes, e revendedores direto no painel do servidor conectado)",
+        "id": "5336e5ec",
+        "criteria_id": "3d586986",
+        "created_at": "2026-01-22 11:45"
+    },
+    {
+        "title": "Feature: Exclusão de Servidores Conectados",
+        "steps": "clicar em servidores, \nclicar no icone de lixeira ao lado do servidor que sera excluido\nna modal de confirmação de exclusão, deve aparecer um campo para inserção de senha",
+        "expected": "Então uma modal deve aparecer solicitando a confirmação da senha, apresentando um campo para inserção da senha e um botão de confirmação.",
+        "preconditions": "ter um servidor conectado",
+        "id": "d8c2b6c6",
+        "criteria_id": "cde1ffb7",
+        "created_at": "2026-01-22 12:02"
+    }
+]

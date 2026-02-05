@@ -1,0 +1,29 @@
+[
+    {
+        "title": "Criação de História do Usuário com IA",
+        "description": "Como usuário, quero poder criar uma história do usuário e aprimorá-la com a ajuda de inteligência artificial, para que eu possa desenvolver narrativas mais envolventes e personalizadas.",
+        "priority": "Média",
+        "owner": "rICARDO",
+        "status": "Backlog",
+        "id": "2ba60f2e",
+        "created_at": "2025-10-11 21:52"
+    },
+    {
+        "title": "Notificação de Expiração de Usuários",
+        "description": "Como administrador, quero que o sistema envie automaticamente mensagens no WhatsApp para os usuários que estão prestes a expirar em 5 dias, para que eles sejam notificados e possam tomar as devidas providências.",
+        "priority": "Alta",
+        "owner": "ric",
+        "status": "Backlog",
+        "id": "cc87ed1c",
+        "created_at": "2025-10-11 23:58"
+    },
+    {
+        "title": "Notificação de Prazo de Expiração do Plano",
+        "description": "Como usuário, quero receber uma mensagem pelo WhatsApp sobre o prazo de expiração do meu plano, com um link para gerar o código do PIX, para que eu possa efetuar o pagamento e evitar o cancelamento do meu plano.",
+        "priority": "Alta",
+        "owner": "rick",
+        "status": "Em andamento",
+        "id": "4c91cf02",
+        "created_at": "2025-10-12 11:32"
+    }
+]

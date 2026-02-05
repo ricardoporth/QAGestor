@@ -1,0 +1,38 @@
+[
+    {
+        "title": "tESTAR O FLUXO DE GERAÇÃO DA DOC ATÉ CASO DE TESTE",
+        "steps": "GERAR USER. GERAR TESTE DE ACEITE, GERAR CENARIO DE TESTE",
+        "expected": "DEVE SER POSSIVEL UM LEVAR AO OUTRO DE FORMA FUNCIONAL",
+        "preconditions": "TER GERADO ATE AQUI UM ACCPTANCE CRITERIA",
+        "id": 1,
+        "criteria_id": 1,
+        "created_at": "2025-10-11 20:40"
+    },
+    {
+        "title": "Feature: Criação de História do Usuário com IA - Gerar dados corrigidos com IA",
+        "steps": "ADIONAR UMA DESCRRIÇÃO O CAMPO PASSOS, CLICAR EM ANALISAR COM IA ",
+        "expected": "O sistema deve retornar uma mensagem de sucesso e exibir os dados corrigidos gerados pela IA na tela de criação de critério.",
+        "preconditions": "ter o accptace crtierio pronto",
+        "id": "62bf24cc",
+        "criteria_id": "3ecad144",
+        "created_at": "2025-10-11 22:49"
+    },
+    {
+        "title": "Notificação de Usuários a Expirar",
+        "steps": "dado que sou admin e cadastrei o numero dos meus clientes qunado estiverem para vencer o plano dos usuarios o sistema deve enviar uma msg notificando via whatsao",
+        "expected": "O sistema deve enviar mensagens via WhatsApp para os clientes cadastrados, informando sobre a proximidade da expiração de seus planos, com os seguintes textos: 'Seu plano está prestes a expirar em 7 dias!', 'Seu plano está prestes a expirar em 5 dias!', e 'Seu plano está prestes a expirar em 3 dias!'.",
+        "preconditions": "deve estar cadastrado, servidor, e conta do whags",
+        "id": "2a411e2b",
+        "criteria_id": "1fd4b864",
+        "created_at": "2025-10-12 00:05"
+    },
+    {
+        "title": "Feature: Notificação de Prazo de Expiração do Plano",
+        "steps": "Como um usuário  Eu quero receber uma mensagem pelo WhatsApp sobre o prazo de expiração do meu plano  Para que eu possa efetuar o pagamento e evitar o cancelamento do meu plano \n \nScenario: Receber notificação de expiração do plano    \nGiven que o usuário possui um plano ativo    \nAnd o prazo de expiração do plano está se aproximando    \nWhen o sistema envia uma mensagem pelo WhatsApp    \nThen a mensagem deve conter informações sobre a expiração do plano    \nAnd a mensagem deve incluir um link para gerar o código do PIX    \nAnd a mensagem deve ser enviada no formato adequado para WhatsApp    \nAnd o usuário deve receber a mensagem antes da data de expiração",
+        "expected": "a mensagem deve conter informações sobre a expiração do plano\n    And a mensagem deve incluir um link para gerar o código do PIX\n    And a mensagem deve ser enviada no formato adequado para WhatsApp\n    And o usuário deve receber a mensagem antes da data de expiração",
+        "preconditions": "deve estar a 5 dias ou 5 dias vencidos, um canal conetado no flow gestor, e um servidor de onde sera tirada a lista de usuarios a vencer",
+        "id": "3a5d8aa3",
+        "criteria_id": "d1509585",
+        "created_at": "2025-10-12 11:46"
+    }
+]

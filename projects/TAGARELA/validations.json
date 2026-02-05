@@ -1,0 +1,518 @@
+[
+    {
+        "bug_id": 1,
+        "status": "Reprovado",
+        "report": "[Validação de Teste - ❌ REPROVADO]\nFeature/Bug Testado: [TAGARELA] - [fluxos e automação] - Ao criar uma nova conta, fluxo padrão direciona chat para aba errada.\nResultado:\nO teste foi executado no dia 06/10/2025 e a correção foi REPROVADA.\n**Descrição:**\n- Criar uma nova conta\n- Conectar um canal ao Tagarela\n- Enviar uma mensagem de outro número para o número conectado ao Tagarela (simulando um cliente)\n- Verificar que o chat iniciado é imediatamente mostrado na aba de Fechadas, e não na de Pendentes como deveria\n---\n**Comportamento Ideal:**\nAo criar uma nova conta, o fluxo padrão deve direcionar o chat para a aba de Pendentes, aguardando o atendimento manual do atendente após o cliente enviar uma mensagem.\n---\n**Comportamento Atual:**\nAo criar uma nova conta, o fluxo padrão está configurado para a fila de pendentes, porém quando o cliente envia uma mensagem, ele é direcionado imediatamente para a aba de Fechadas.",
+        "date": "2025-10-06 10:58"
+    },
+    {
+        "bug_id": 2,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Fluxos] - [BUG] Impedir exclusão de fluxos iniciais pelo backend.\nResultado:\nO teste foi executado no dia 06/10/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Sempre verificar se o fluxo a ser deletado é inicial. Se for inicial, não permitir a exclusão dele' foi observado. O problema original 'Permite a exclusão de um fluxo setado como inicial dentro da página de edição de fluxo (canva)' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-10-06 11:11"
+    },
+    {
+        "bug_id": 3,
+        "status": "Reprovado",
+        "report": "[Validação de Teste - ❌ REPROVADO]\nFeature/Bug Testado: [TAGARELA] - [Chat ] - [BUG] - Problema com a reprodução de áudio no WhatsApp.\nResultado:\nO teste foi executado no dia 06/10/2025 e a correção foi REPROVADA.\nDetalhes:\nO problema original ainda ocorre. [Descreva aqui o que você observou].\nO comportamento esperado não foi atingido.",
+        "date": "2025-10-06 11:57"
+    },
+    {
+        "bug_id": 5,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [painel do chat] - Falha na exibição de novas mensagens recebidas.\nResultado:\nO teste foi executado no dia 13/10/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'A nova mensagem recebida deve ser exibida automaticamente e instantaneamente na interface do chat sem a necessidade de recarregar a página' foi observado. O problema original 'A nova mensagem recebida não é exibida automaticamente na interface do chat, sendo necessário recarregar a página manualmente para vê-la' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-10-13 15:17"
+    },
+    {
+        "bug_id": 6,
+        "status": "Aprovado",
+        "report": "Relatório de Validação de Teste\n\n[Feature/Bug Testado]\nTAGARELA - Painel do Chat - Encerrar uma conversa não atualiza a conversa na aba de fechadas automaticamente.\n\n[Resultado]\n✅ APROVADO\n\n[Data do Teste]\n16/10/2025\n\n[Detalhes]\n- O comportamento esperado foi observado.\n- O problema original não ocorre mais.\n- Nenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.\n\nO teste foi executado com sucesso e a correção foi validada.",
+        "date": "2025-10-16 14:49"
+    },
+    {
+        "bug_id": 4,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Chat] - Automação continua enviando mensagens mesmo após ser parada manualmente pelo atendente.\nResultado:\nO teste foi executado no dia 16/10/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Após ser parada manualmente pelo atendente na aba de automação, a automação não deve mais enviar mensagens' foi observado. O problema original 'A automação continua enviando mensagens mesmo após ser parada manualmente pelo atendente na aba de automação' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-10-16 17:07"
+    },
+    {
+        "bug_id": 14,
+        "status": "Reprovado",
+        "report": "[Validação de Teste - ❌ REPROVADO]\nFeature/Bug Testado: [TAGARELA] - [painel de chat] - Ícone do perfil do cliente não aparece ao lado das mensagens.\nResultado:\nO teste foi executado no dia 22/10/2025 e a correção foi REPROVADA.\nDetalhes:\nO problema original ainda ocorre. \n'O ícone do perfil do cliente não está sendo exibido ao lado das mensagens nas conversas ativas do painel de chat.\nnas conversas do tegram vem com imagem quebrada\ne nas do Whats vem com apenas as inciais do nome do cliente '\n\n\nO comportamento esperado não foi atingido.",
+        "date": "2025-10-22 09:59"
+    },
+    {
+        "bug_id": 14,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [painel de chat] - Ícone do perfil do cliente não aparece ao lado das mensagens.\nResultado:\nO teste foi executado no dia 24/10/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Ao acessar o painel de chat e clicar em uma conversa ativa, o ícone do perfil do cliente deve ser exibido ao lado das mensagens para identificação visual.' foi observado. O problema original 'O ícone do perfil do cliente não está sendo exibido ao lado das mensagens nas conversas ativas do painel de chat.\nnas conversas do tegram vem com imagem quebrada\ne nas do Whats vem com apenas as inciais do nome do cliente ' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-10-24 10:45"
+    },
+    {
+        "bug_id": 13,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [node de Texto] - Definir unidade como minutos por padrão no campo de \"Tipo de Valor\".\nResultado:\nO teste foi executado no dia 24/10/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O select 'Tipo de intervalo' deve ser configurado como minutos por padrão ao selecionar uma validação com minutos e ao salvar o fluxo o valor deve ser salvo corretamente como 'timeoutType': 'minutes'.' foi observado. O problema original 'Atualmente, o select 'Tipo de intervalo' embora no front venha setado como default em minutos,  e passar o valor de 'timeoutType': 'minutes'., porem atualmente quando salvo, passa vazio' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-10-24 12:54"
+    },
+    {
+        "bug_id": 7,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Membros - adicionar membros] - Falha ao adicionar novos membros.\nResultado:\nO teste foi executado no dia 24/10/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Após preencher os campos de nome, email e categoria do novo membro e clicar em 'Adicionar membro', o sistema deve criar o membro com as informações fornecidas.' foi observado. O problema original 'Ao tentar adicionar um novo membro preenchendo os campos necessários e clicando no botão correspondente, nada acontece. A requisição não é enviada e o novo membro não é criado.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-10-24 13:08"
+    },
+    {
+        "bug_id": 20,
+        "status": "Reprovado",
+        "report": "[Validação de Teste - ❌ REPROVADO]\nFeature/Bug Testado: [TAGARELA] - [Pagina de Login] - ( esta com scroll) - Problema de responsividade na tela de login.\nResultado:\nO teste foi executado no dia 28/10/2025 e a correção foi REPROVADA.\nDetalhes:\nO problema original ainda ocorre. \n'Ao acessar a tela de login em telas menores, a página apresenta um scroll e não se ajusta corretamente ao tamanho da tela, indicando um problema de responsividade.'\n\n\nO comportamento esperado não foi atingido.",
+        "date": "2025-10-28 10:35"
+    },
+    {
+        "bug_id": 10,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Chat - drawer de ver detalhes] - Contagem incorreta de arquivos no acordeon de Mídias e Documentos.\nResultado:\nO teste foi executado no dia 28/10/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O acordeon de Mídias e Documentos deve exibir corretamente o total de arquivos presentes na conversa, sem limitar a contagem a um número específico.' foi observado. O problema original 'A contagem total de arquivos no acordeon de Mídias e Documentos fica fixa em 6, não sendo atualizada para refletir a quantidade real de arquivos na conversa.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-10-28 10:35"
+    },
+    {
+        "bug_id": 20,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Pagina de Login] - ( esta com scroll) - Problema de responsividade na tela de login.\nResultado:\nO teste foi executado no dia 28/10/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'A página de login deve ser responsiva e ajustar-se verticalmente  corretamente ao tamanho da tela em todos os dispositivos, sem a necessidade de um scroll.' foi observado. O problema original 'Ao acessar a tela de login em telas menores, a página apresenta um scroll e não se ajusta corretamente ao tamanho da tela, indicando um problema de responsividade.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-10-28 16:10"
+    },
+    {
+        "bug_id": 9,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [conversas - Aba de fechadas] - Botão de iniciar ausente na aba de conversas fechadas.\nResultado:\nO teste foi executado no dia 31/10/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deve exibir o botão de 'iniciar' na aba de conversas fechadas, seguindo o design do protótipo do figma.' foi observado. O problema original 'Atualmente, ao acessar a aba de conversas fechadas,  e selecionar uma conversa, não é possível encontrar o botão de 'iniciar' para iniciar uma conversa com o contato novamente via tagarela .' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-10-31 09:39"
+    },
+    {
+        "bug_id": 17,
+        "status": "Reprovado",
+        "report": "[Validação de Teste - ❌ REPROVADO]\nFeature/Bug Testado: [TAGARELA] - [Chat de conversa] - Nome incorreto do arquivo incialmente ao enviar via chat (arrastar da pasta para o chat).\nResultado:\nO teste foi executado no dia 31/10/2025 e a correção foi REPROVADA.\nDetalhes:\nquando os arquivo são recebidos pelo contato, o nome dos arquivos desaparece nos bubbles, tanto para contatos do whats qunato telegram\n",
+        "date": "2025-10-31 10:14"
+    },
+    {
+        "bug_id": 23,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Chat de conversa] - Botão de Emojis não Funciona.\nResultado:\nO teste foi executado no dia 31/10/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Ao clicar no botão de Emojis, deveria abrir uma modal para seleção de emojis conforme design no Figma' foi observado. O problema original 'Ao clicar no botão de Emojis, nada acontece' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-10-31 10:30"
+    },
+    {
+        "bug_id": 19,
+        "status": "Reprovado",
+        "report": "[Validação de Teste - ❌ REPROVADO]\nFeature/Bug Testado: [TAGARELA] - [Chat de conversa] - Node de atendente especifico selecionado - envia o cliente para aba de Fechadas.\nResultado:\nO teste foi executado no dia 31/10/2025 e a correção foi REPROVADA.\nDetalhes:\nO problema original ainda ocorre. \n'Ao chegar no final do fluxo automatizado, o cliente  é direcionada para a aba de fechadas do perfil do admin e não aparece para o atendente selecionado, ficando presa nessa aba, '\n\n\nO comportamento esperado não foi atingido.",
+        "date": "2025-10-31 10:51"
+    },
+    {
+        "bug_id": 30,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Pagina de exibição de arquivos de uma conversa] - Atualização incorreta do ícone do atendente na exibição de imagens.\nResultado:\nO teste foi executado no dia 06/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'A página de exibição da imagem deve apresentar corretamente o ícone do atendente atualizado ao selecionar um contato específico' foi observado. O problema original 'A página de exibição da imagem não exibe corretamente o ícone do atendente, mesmo após selecionar o contato correspondente' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-06 07:18"
+    },
+    {
+        "bug_id": 28,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Sidebar] - Botão de navegação 'Conversas' não marca como ativo.\nResultado:\nO teste foi executado no dia 06/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O botão 'Conversas' ao ser clicado deve receber data-current='true'. O botão anteriormente ativo deve retornar para data-current='false', e o estilo condicional de fundo branco deve ser aplicado corretamente.' foi observado. O problema original 'Ao clicar no botão 'Conversas', o atributo data-current não é atualizado para true, impedindo a aplicação da estilização condicional configurada no Tailwind CSS. Apenas o botão 'Configuração' apresenta o comportamento correto.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-06 07:25"
+    },
+    {
+        "bug_id": 21,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Tela inicial, Sidebar, painel do chat] - Falha na exibição de imagens de perfil dos membros da company.\nResultado:\nO teste foi executado no dia 06/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Após realizar a alteração da imagem de perfil de um membro, a mesma deve ser exibida corretamente no canto inferior da sidebar e nos ícones de imagem de perfil no chat de conversa.' foi observado. O problema original 'As imagens de perfil dos membros da company não estão sendo exibidas no canto inferior da sidebar e nos ícones de imagem de perfil ao lado dos bubbles de conversa no chat.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-06 07:25"
+    },
+    {
+        "bug_id": 24,
+        "status": "Reprovado",
+        "report": "[Validação de Teste - ❌ REPROVADO]\nFeature/Bug Testado: [TAGARELA] - [Painel de conversas] - Ajustar padding lateral do campo de input de mensagens (text area).\nResultado:\nO teste foi executado no dia 06/11/2025 e a correção foi REPROVADA.\nDetalhes:\nO problema agora consiste em que a margem para o lado direito está quebrada . \n'O componente de input de mensagens (text area)  não possui o padding lateral ajustado corretamente, causando conflito com os elementos ao redor.'\n\n\nO comportamento esperado não foi atingido.",
+        "date": "2025-11-06 07:50"
+    },
+    {
+        "bug_id": 31,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Chat de conversa] - Erro  400 ao enviar mensagens .\nResultado:\nO teste foi executado no dia 07/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deve permitir o funcionamento correto da automação e o envio de mensagens entre cliente e atendente sem erros.' foi observado. O problema original 'Após a primeira mensagem do cliente, a mensagem chega no tagarela, porem as demais ele não recebe, e tambem não envia,  o chat para de funcionar . A automação não responde e ao assumir manualmente o chat, ocorre um erro 400 ao tentar enviar uma mensagem, com a mensagem 'Chat não possui contactId'. Ao dar reload, a mensagem não persiste, confirmando que não foi enviada.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-07 09:46"
+    },
+    {
+        "bug_id": 26,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [PAinel de conversa] - Inversão de ordem dos acordeons de chats encerrados.\nResultado:\nO teste foi executado no dia 07/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Os acordeons de chats encerrados devem ser exibidos com os mais recentes na parte inferior da página e os mais antigos no topo' foi observado. O problema original 'as conversas  encerrados estão sendo exibidos em ordem inversa, com os mais recentes no topo e os mais antigos na base' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-07 11:14"
+    },
+    {
+        "bug_id": 18,
+        "status": "Reprovado",
+        "report": "[Validação de Teste - ❌ REPROVADO]\nFeature/Bug Testado: [TAGARELA] - [Tela de Chat - aba em andamento] - Problema de formatação de nomes de arquivos com acentos.\nResultado:\nO teste foi executado no dia 10/11/2025 e a correção foi REPROVADA.\nDetalhes:\nO problema original ainda ocorre. \n'Ao enviar um arquivo com nome contendo acentos para o chat, a formatação quebra o nome com outros caracteres'\n\n\nO comportamento esperado não foi atingido.",
+        "date": "2025-11-10 10:06"
+    },
+    {
+        "bug_id": 24,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Painel de conversas] - Ajustar padding lateral do campo de input de mensagens (text area).\nResultado:\nO teste foi executado no dia 12/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O componente de input de mensagens deve ter o padding lateral configurado de acordo com o design presente no Figma.' foi observado. O problema original 'O componente de input de mensagens (text area)  não possui o padding lateral ajustado corretamente, causando conflito com os elementos ao redor.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-12 10:40"
+    },
+    {
+        "bug_id": 33,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [painel de cnversa] - Correção da propriedade de texto no atendimento finalizado.\nResultado:\nO teste foi executado no dia 12/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O texto deveria ser exibido com o tamanho 'text-sm leading-none text-gray-500'.' foi observado. O problema original 'Atualmente, o texto está sendo exibido com o tamanho 'text-xs leading-none text-gray-500'.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-12 10:50"
+    },
+    {
+        "bug_id": 35,
+        "status": "Reprovado",
+        "report": "[Validação de Teste - ❌ REPROVADO]\nFeature/Bug Testado: [TAGARELA] - [sidebar  ver detalhes] -  Exibir apenas imagens, vídeos, GIFs e áudios na aba \"Mídias\".\nResultado:\nO teste foi executado no dia 12/11/2025 e a correção foi REPROVADA.\nDETALHES atualmente esta dando o problema de que quando clico em sidebar, expando o acordeon de midias e documentos, e depois em ver todos, na aba de midias, ",
+        "date": "2025-11-12 11:59"
+    },
+    {
+        "bug_id": 22,
+        "status": "Reprovado",
+        "report": "[Validação de Teste - ❌ REPROVADO]\nFeature/Bug Testado: [TAGARELA] - [Tela de listagem de  Fluxos] - Pesquisa de fluxo não filtra corretamente.\nResultado:\nO teste foi executado no dia 12/11/2025 e a correção foi REPROVADA.\nDetalhes:\nO problema original ainda ocorre. \n'A pesquisa de fluxo não está filtrando corretamente os resultados, retornando todos os fluxos em vez de apenas os compatíveis com o termo pesquisado.'\n\n\nO comportamento esperado não foi atingido.",
+        "date": "2025-11-12 12:08"
+    },
+    {
+        "bug_id": 22,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Tela de listagem de  Fluxos] - Pesquisa de fluxo não filtra corretamente.\nResultado:\nO teste foi executado no dia 13/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'A pesquisa de fluxo deve filtrar e retornar apenas os títulos de fluxos que sejam compatíveis com o termo pesquisado, garantindo resultados mais precisos.' foi observado. O problema original 'A pesquisa de fluxo não está filtrando corretamente os resultados, retornando todos os fluxos em vez de apenas os compatíveis com o termo pesquisado.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-13 10:31"
+    },
+    {
+        "bug_id": 37,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [node de webhook] - Correção da URL no node de webhook.\nResultado:\nO teste foi executado no dia 13/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'A URL passada no node de webhook deve ser corrigida para 'https://dev.webhook.tagare.la/', com o ponto correto em 'tagare.la'. Isso garantirá consistência e correta funcionalidade ao usuário.' foi observado. O problema original 'A URL passada no node de webhook está incorreta, com a parte fixa sem o ponto em 'tagare.la'. Isso está afetando a funcionalidade esperada do sistema.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-13 10:36"
+    },
+    {
+        "bug_id": 32,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Painel do chat] - Correção da exibição de ícones de arquivos conforme sua extensão.\nResultado:\nO teste foi executado no dia 13/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deve exibir o ícone correto para cada extensão de arquivo enviada' foi observado. O problema original 'Atualmente, algumas extensões de arquivos estão sendo exibidas com ícones incorretos, que não correspondem ao protótipo no figma' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-13 10:59"
+    },
+    {
+        "bug_id": 36,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [node de webhook] - Botão de mostrar detalhes não exibe texto corretamente.\nResultado:\nO teste foi executado no dia 14/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O texto dentro do botão de mostrar detalhes deve ser exibido corretamente e de forma legível' foi observado. O problema original 'O texto dentro do botão de mostrar detalhes não está sendo exibido corretamente' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-14 09:41"
+    },
+    {
+        "bug_id": 41,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Painel de conversas] - Tags não são exibidas no cabeçalho do contato ao serem adicionadas.\nResultado:\nO teste foi executado no dia 14/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Após adicionar ou remover tags de um contato, elas devem ser atualizadas e exibidas imediatamente no cabeçalho do contato' foi observado. O problema original 'As tags adicionadas a um contato não estão sendo exibidas no cabeçalho do contato após serem aplicadas' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-14 09:44"
+    },
+    {
+        "bug_id": 40,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [SIDE BAR de ver detalhes, aba de aba de links] - Problema ao visualizar e acessar links sem preview em conversas.\nResultado:\nO teste foi executado no dia 14/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Os links sem preview deveriam ser clicáveis, mesmo sem a visualização do site.' foi observado. O problema original 'Os links sem preview não estão sendo clicáveis ou visualizáveis na aba de links quando o site não possui preview.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-14 09:52"
+    },
+    {
+        "bug_id": 39,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [chat de conversas] - Campo de input de mensagem desconfigurado ao anexar arquivos por drag and drop.\nResultado:\nO teste foi executado no dia 14/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Ao arrastar arquivos para a conversa, a visualização do arquivo e o campo de mensagem devem estar alinhados corretamente, proporcionando uma experiência de uso sem falhas.' foi observado. O problema original 'Ao arrastar arquivos para a conversa, a visualização do arquivo e o campo de mensagem estão desconfigurados, dificultando a interação do usuário.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-14 10:01"
+    },
+    {
+        "bug_id": 38,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Sidebar, bubbles de conversas] - Falha na atualização instantânea do nome do membro.\nResultado:\nO teste foi executado no dia 14/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deve atualizar instantaneamente os campos onde o nome do membro é exibido após salvar as alterações no perfil do membro.' foi observado. O problema original 'Após editar e salvar o nome do membro, o sistema não atualiza automaticamente os campos onde o nome do membro é exibido, sendo necessário fazer logout e login para que as alterações sejam refletidas corretamente.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-14 10:09"
+    },
+    {
+        "bug_id": 17,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Chat de conversa] - Nome incorreto do arquivo incialmente ao enviar via chat (arrastar da pasta para o chat).\nResultado:\nO teste foi executado no dia 14/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O nome do arquivo deveria ser exibido corretamente no chat assim que o arquivo é enviado. Alternativamente, um indicador de loading poderia ser exibido até que o arquivo seja totalmente recebido pelo cliente.' foi observado. O problema original 'Ao enviar um arquivo via chat, o nome exibido inicialmente está incorreto e só é corrigido após o cliente receber a mensagem.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-14 10:13"
+    },
+    {
+        "bug_id": 19,
+        "status": "Reprovado",
+        "report": "[Validação de Teste - ❌ REPROVADO]\nFeature/Bug Testado: [TAGARELA] - [Chat de conversa] - Node de atendente especifico selecionado - envia o cliente para aba de Fechadas.\nResultado:\nO teste foi executado no dia 14/11/2025 e a correção foi REPROVADA.\nDetalhes:\nO problema agora é que, quando o cliente chega ao final do fluxo, a conversa continua sendo mostrada na aba \"\n\nO comportamento esperado não foi atingido.",
+        "date": "2025-11-14 14:24"
+    },
+    {
+        "bug_id": 18,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Tela de Chat - aba em andamento] - Problema de formatação de nomes de arquivos com acentos.\nResultado:\nO teste foi executado no dia 17/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O nome do arquivo com acentos deve ser exibido corretamente no chat, sem quebra de caracteres' foi observado. O problema original 'Ao enviar um arquivo com nome contendo acentos para o chat, a formatação quebra o nome com outros caracteres' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-17 16:42"
+    },
+    {
+        "bug_id": 34,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Criar conta] - Falha na recepção de senha ao criar novo usuário.\nResultado:\nO teste foi executado no dia 21/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deve enviar o email com a senha corretamente criptografada, permitindo ao usuário acessar sua conta sem problemas' foi observado. O problema original 'Ao criar um novo usuário, o email enviado com a senha está vindo como null, sendo que deveria ser um valor de senha criptografada, provalvelmente esta passando o valor do campo tempPassword' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-21 09:01"
+    },
+    {
+        "bug_id": 48,
+        "status": "Reprovado",
+        "report": "[Validação de Teste - ❌ REPROVADO]\nFeature/Bug Testado: [TAGARELA] - [painel de conversas] - Falha ao agendar mensagens.\nResultado:\nO teste foi executado no dia 21/11/2025 e a correção foi REPROVADA.\nDetalhes:\nO problema original ainda ocorre. \n'Ao tentar agendar mensagens, a ação não é concluída e nada acontece ao clicar no ícone de enviar mensagem.'\n\n\nO comportamento esperado não foi atingido.",
+        "date": "2025-11-21 10:05"
+    },
+    {
+        "bug_id": 4,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Chat] - Automação continua enviando mensagens mesmo após ser parada manualmente pelo atendente.\nResultado:\nO teste foi executado no dia 21/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Após ser parada manualmente pelo atendente na aba de automação, a automação não deve mais enviar mensagens' foi observado. O problema original 'A automação continua enviando mensagens mesmo após ser parada manualmente pelo atendente na aba de automação' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-21 10:29"
+    },
+    {
+        "bug_id": 48,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [painel de conversas] - Falha ao agendar mensagens.\nResultado:\nO teste foi executado no dia 24/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'A funcionalidade de agendar mensagens deve permitir selecionar o dia e horário desejado e enviar a mensagem conforme programado.' foi observado. O problema original 'Ao tentar agendar mensagens, a ação não é concluída e nada acontece ao clicar no ícone de enviar mensagem.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-24 09:38"
+    },
+    {
+        "bug_id": 49,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [chat de conersa] - Posicionamento incorreto de bubbles de mensagens no chat do Tagarela.\nResultado:\nO teste foi executado no dia 24/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'As bubbles de mensagens enviadas pelo atendente do Tagarela devem ser renderizadas em um lado separado das mensagens recebidas pelo cliente, facilitando a visualização e distinção entre as mensagens enviadas e recebidas.' foi observado. O problema original 'As bubbles de mensagens enviadas pelo atendente do Tagarela estão sendo renderizadas no mesmo lado das mensagens do cliente, dificultando a identificação de quem envia e quem recebe as mensagens.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-24 09:46"
+    },
+    {
+        "bug_id": 50,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [tela de cadastro de usuario] - exibir hash da senha na requisição de cadastro de usuário.\nResultado:\nO teste foi executado no dia 24/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema não deve exibir o hash da senha na requisição, garantindo a segurança dos dados dos usuários.' foi observado. O problema original 'O hash da senha está sendo mostrado na requisição, o ideal seria não mostra-la' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-24 09:54"
+    },
+    {
+        "bug_id": 51,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [painel de conversa] - Waves de áudio ausentes em bubbles de mensagens de voz enviadas pelo tagarela.\nResultado:\nO teste foi executado no dia 27/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'As mensagens de voz enviadas pelo tagarela devem exibir as waves de áudio junto com o bubble de áudio' foi observado. O problema original 'Os bubbles de áudio enviados pelo tagarela não exibem as waves de áudio correspondentes' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-27 09:37"
+    },
+    {
+        "bug_id": 56,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [painel de conversa] - o painel de conversa não atualiza ao ser transferir uma conversa para outro atendente.\nResultado:\nO teste foi executado no dia 28/11/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Ao transferir uma conversa para outro atendente, a conversa deve desaparecer imediatamente da tela do remetente e aparecer na aba 'Pending' do destinatário.' foi observado. O problema original 'Ao transferir uma conversa para outro atendente, a conversa não some instantaneamente da tela e aparece na aba 'Pending' do atendente destino.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-11-28 16:39"
+    },
+    {
+        "bug_id": 57,
+        "status": "Reprovado",
+        "report": "[Validação de Teste - ❌ REPROVADO]\nFeature/Bug Testado: [TAGARELA] - [Painel de conversas] - Transferência de conversa exibe conversa na aba pendente de todos os atendentes.\nResultado:\nO teste foi executado no dia 02/12/2025 e a correção foi REPROVADA.\nDetalhes:\nO problema original ainda ocorre. \n'Ao transferir uma conversa para um atendente específico, o sistema exibe a conversa na aba pendente de todos os membros da company, permitindo que qualquer atendente visualize e pegue a conversa, o que não deveria ocorrer.'\n\n\nO comportamento esperado não foi atingido.",
+        "date": "2025-12-02 10:20"
+    },
+    {
+        "bug_id": 52,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [painel de conversa - acordeons] - dentro dos acordeons, os Bubbles de mensagens enviadas e recebidas estão confusos.\nResultado:\nO teste foi executado no dia 03/12/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Dentro do acorddeon, as bubbles de mensagens enviadas pelo atendente do Tagarela devem ser renderizadas em um lado separado das mensagens recebidas pelo cliente, facilitando a visualização e distinção entre as mensagens enviadas e recebidas.' foi observado. O problema original 'Dentro do acordeon de chats encerrados, as bubbles de mensagens enviadas pelo atendente do Tagarela ou automação estão sendo renderizadas no mesmo lado das mensagens do cliente, dificultando a identificação do remetente e destinatário das mensagens.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-12-03 10:01"
+    },
+    {
+        "bug_id": 57,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Painel de conversas] - Transferência de conversa exibe conversa na aba pendente de todos os atendentes.\nResultado:\nO teste foi executado no dia 03/12/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Após a transferência de uma conversa para um atendente específico, apenas o atendente selecionado deve ter acesso à conversa na aba pendente.' foi observado. O problema original 'Ao transferir uma conversa para um atendente específico, o sistema exibe a conversa na aba pendente de todos os membros da company, permitindo que qualquer atendente visualize e pegue a conversa, o que não deveria ocorrer.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-12-03 10:31"
+    },
+    {
+        "bug_id": 19,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Chat de conversa] - Node de atendente especifico selecionado - envia o cliente para aba de Fechadas.\nResultado:\nO teste foi executado no dia 03/12/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'o chat do cliente  deve ser direcionada corretamente para a aba de pendentes do perfil do atendente selecionado.' foi observado. O problema original 'Ao chegar no final do fluxo automatizado, o cliente  é direcionada para a aba de fechadas do perfil do admin e não aparece para o atendente selecionado, ficando presa nessa aba, ' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-12-03 11:02"
+    },
+    {
+        "bug_id": 58,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Transferir atendimento manualmente] - Erro na transferência de atendimento para Wilton.\nResultado:\nO teste foi executado no dia 09/12/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deve transferir o atendimento corretamente para o atendente selecionado, colocando-o em estado 'pending'' foi observado. O problema original 'Ao transferir um chat para outro atendente, a conversa é destinada erroneamente para o atendente Wilton' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-12-09 17:00"
+    },
+    {
+        "bug_id": 55,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [acordeon] - Falta de informaçõesnos logs nos acordeons  quando a tag foi removida.\nResultado:\nO teste foi executado no dia 09/12/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deve exibir corretamente o nome e o Id da tag removida nos logs, além de indicar de forma clara que a tag foi removida.' foi observado. O problema original 'Os campos de name e Id das tags removidas não são exibidos nos logs dos acordeons, gerando confusão e falta de informação ao usuário.  campos de name e Id das tags removidas não vem do back para o front consumir nos logs dos acordeons, por exemplo, quando a tag é adiciona, vem [                        {\n                            \"id\": \"6925f8483076e01d44a9f7d4\",\n                            \"type\": \"tag\",\n                            \"action\": \"added\",\n                            \"description\": {\n                                \"name\": \"TagFIm\",\n                                \"id\": \"68f8d69c944540ffe006f9c8\"\n                            },\n                            \"createdAt\": \"2025-11-25T18:41:12.909Z\"\n                        }], porem quando a tag é removida vem = [                        {\n                            \"id\": \"6925f8493076e01d44a9f8b6\",\n                            \"type\": \"tag\",\n                            \"action\": \"removed\",\n                            \"description\": {\n                                \"id\": \"6925f8493076e01d44a9f8b7\"\n                            },\n                            \"createdAt\": \"2025-11-25T18:41:13.301Z\"\n                        },]' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-12-09 17:04"
+    },
+    {
+        "bug_id": 53,
+        "status": "Reprovado",
+        "report": "[Validação de Teste - ❌ REPROVADO]\nFeature/Bug Testado: [TAGARELA] - [painel de conversas] - [BACK] - Corrigir envio de mensagem agendada.\nResultado:\nO teste foi executado no dia 09/12/2025 e a correção foi REPROVADA.\nDetalhes:\nO problema original ainda ocorre. \n'Quando uma mensagem é agendada para um horário específico, ela não é enviada conforme programado'\n\n\nO comportamento esperado não foi atingido.",
+        "date": "2025-12-09 17:41"
+    },
+    {
+        "bug_id": 60,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Painel de conversas] - [back] - Implementar o LOG de transferência de fluxo nos acordeões.\nResultado:\nO teste foi executado no dia 11/12/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Deve ser exibido o log de transferência de fluxo nos acordeões quando um usuário finaliza um fluxo que conecta a outro.' foi observado. O problema original 'Quando um usuário finaliza um fluxo que conecta a outro fluxo, o log de transferência de fluxo nos acordeões não está sendo exibido.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-12-11 09:48"
+    },
+    {
+        "bug_id": 62,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Tela de conversas] - Log de variável não exibido ao finalizar fluxo.\nResultado:\nO teste foi executado no dia 11/12/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deveria exibir corretamente o log de variáveis adicionadas ou alteradas nos acordeões ao finalizar um fluxo.' foi observado. O problema original 'Ao finalizar um fluxo com um node que recebe variável, o log de transferência de fluxo não é exibido nos acordeões.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-12-11 09:52"
+    },
+    {
+        "bug_id": 65,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [sidebar verdetalhes] - BACK - Adicionar campos photo e email na rota de info.\nResultado:\nO teste foi executado no dia 17/12/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deve incluir os campos photo e email na rota de info do back-end para que o front-end possa consumir e exibir esses dados corretamente.' foi observado. O problema original 'Atualmente, os campos photo e email estão ausentes na rota de info no back-end, impedindo o front-end de consumir essas informações.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-12-17 10:19"
+    },
+    {
+        "bug_id": 64,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [painel de conversas] - Variáveis da Automação não são exibidas corretamente no acordeon de variáveis.\nResultado:\nO teste foi executado no dia 17/12/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Todas as variáveis, independente de terem sido adicionadas manualmente ou pela automação, devem ser exibidas corretamente no acordeon de variáveis com o valor atual delas.' foi observado. O problema original 'Ao abrir uma conversa, clicar em 'Ver Detalhes' e expandir a sidebar, as variáveis adicionadas ao contato vindas da automação não estão sendo exibidas no acordeon de variáveis, apenas as variáveis adicionadas manualmente são exibidas.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-12-17 10:32"
+    },
+    {
+        "bug_id": 63,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Tela de conversas] - Falha na exibição do log de automação desligada nos acordeões.\nResultado:\nO teste foi executado no dia 17/12/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deveria exibir o log de automação desligada nos acordeões após seguir todo o fluxo da automação' foi observado. O problema original 'O log de automação desligada não é exibido nos acordeões mesmo após seguir todo o fluxo da automação (nao esta vindo do back)' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-12-17 10:51"
+    },
+    {
+        "bug_id": 68,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Painelde conversas] - Erro 400 ao enviar GIFs.\nResultado:\nO teste foi executado no dia 18/12/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Ao selecionar um GIF para enviar em uma conversa, o sistema deve realizar o envio corretamente sem apresentar erros.' foi observado. O problema original 'Ao tentar enviar um GIF em uma conversa, é exibido um erro 400 na rota de envio de arquivos com a mensagem 'Missing file'.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-12-18 09:23"
+    },
+    {
+        "bug_id": 69,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [PAine de conversas] - Falta de exibição das fotos dos atendentes nos logs de chats encerrados.\nResultado:\nO teste foi executado no dia 18/12/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'A foto dos atendentes deve ser exibida corretamente nos logs de chats encerrados, refletindo a informação disponível no backend.' foi observado. O problema original 'A foto dos atendentes não está sendo exibida nos logs de chats encerrados, e  a informação vem como null no backend. É necessário integrar essa informação no back ao front-end corretamente.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-12-18 09:30"
+    },
+    {
+        "bug_id": 53,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [painel de conversas] - [BACK] - Corrigir envio de mensagem agendada.\nResultado:\nO teste foi executado no dia 19/12/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'A mensagem agendada deve ser enviada corretamente no horário especificado pelo usuário' foi observado. O problema original 'Quando uma mensagem é agendada para um horário específico, ela não é enviada conforme programado' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-12-19 09:58"
+    },
+    {
+        "bug_id": 67,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Edição de fluxos] - Falha na persistência da conexão entre nodes do webhook.\nResultado:\nO teste foi executado no dia 22/12/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'As conexões entre os nodes do webhook devem persistir mesmo após salvar, recarregar a página ou sair e voltar a editar os fluxos.' foi observado. O problema original 'A conexão entre o node de webhook e o subsequente não é mantida após salvar, recarregar a página ou sair dos fluxos e voltar a editar.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-12-22 09:53"
+    },
+    {
+        "bug_id": 43,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Painel de conversa] - Imagens de perfil não exibidas ao transferir atendimento.\nResultado:\nO teste foi executado no dia 22/12/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deve exibir as imagens de perfil dos atendentes nos acordeons de chats encerrados após a transferência de atendimento.' foi observado. O problema original 'Ao transferir o atendimento, as imagens de perfil dos atendentes não são exibidas nos acordeons de chats encerrados, apenas as iniciais de seus nomes.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-12-22 10:22"
+    },
+    {
+        "bug_id": 66,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [sidebar ver detalhes] - Mensagens agendadas não persistem ao transferir o chat entre atendentes.\nResultado:\nO teste foi executado no dia 22/12/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'As mensagens agendadas devem persistir nos acordeons mesmo após a transferência do chat entre atendentes.' foi observado. O problema original 'Ao ter algumas mensagens aagendadas, e transferir o chat para outro atendente e este realizar o mesmo procedimento de tranferencia, as mensagens agendadas desaparecem dos acordeons.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-12-22 10:40"
+    },
+    {
+        "bug_id": 72,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [sidebar de ver detalhes] - Falha ao exibir foto do membro no ícone da nota.\nResultado:\nO teste foi executado no dia 23/12/2025 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deveria exibir corretamente a foto do membro no ícone da nota, integrando de maneira adequada o frontend e o backend para garantir a correta exibição da imagem do perfil.' foi observado. O problema original 'O sistema não está integrando corretamente a exibição da foto do membro no ícone da nota na página de notas. A foto do perfil está sendo trazida do backend, porém não está sendo consumida pelo frontend para exibição correta.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2025-12-23 09:24"
+    },
+    {
+        "bug_id": 76,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Editor de Fluxos] - Select de variáveis no bloco de texto exibe variáveis duplicadas (default e custom) após execução do fluxo.\nResultado:\nO teste foi executado no dia 08/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deveria exibir apenas as variáveis do tipo default no select de variaveis  do bloco de texto, facilitando a seleção e evitando confusão com variáveis customizadas.' foi observado. O problema original 'A exibição das variáveis no select do bloco de texto inclui todas as variáveis, mesmo as customizadas, quando o ideal seria mostrar apenas as variáveis do tipo default.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-08 13:30"
+    },
+    {
+        "bug_id": 79,
+        "status": "Reprovado",
+        "report": "[Validação de Teste - ❌ REPROVADO]\nFeature/Bug Testado: [TAGARELA] - [Criar novo mebro] -  Email com Template Incorreto ao Criar Novo Membro.\nResultado:\nO teste foi executado no dia 08/01/2026 e a correção foi REPROVADA.\nDetalhes:\nO problema original ainda ocorre. \n'O template do email enviado não está de acordo com o design do figma'\n\n\nO comportamento esperado não foi atingido.",
+        "date": "2026-01-08 13:47"
+    },
+    {
+        "bug_id": 78,
+        "status": "Reprovado",
+        "report": "[Validação de Teste - ❌ REPROVADO]\nFeature/Bug Testado: [TAGARELA] - [Membros] - Email de resetar senha de um membro com template correto.\nResultado:\nO teste foi executado no dia 08/01/2026 e a correção foi REPROVADA.\nDetalhes:\nO problema original ainda ocorre. \n'Atualmente, ao resetar a senha de um membro , o e-mail é enviado para o e-mail cadastrado, porém com um template genérico e errado, ao invés do template personalizado conforme o e-mail estipulado pelo Figma.'\n\n\nO comportamento esperado não foi atingido.",
+        "date": "2026-01-08 13:53"
+    },
+    {
+        "bug_id": 77,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [tela de conversas] - Transferência de atendimento - (para Qualquer atendente manualmente) envia conversa para status incorreto.\nResultado:\nO teste foi executado no dia 09/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Ao transferir o atendimento usando a opção de \"\"Qualquer atendente\", a conversa deve ser direcionada para a aba de pendentes para geral, permitindo que todos os atendentes possam visualizá-la.' foi observado. O problema original 'Quando a transferência de atendimento é feita para \"Qualquer atendente\", a conversa é enviada para os status incorretos de fechadas ou em andamento, ao invés de ser direcionada para a aba de pendentes para geral (todos os membros poderem acessar a conversa na aba de Pendentes.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-09 14:06"
+    },
+    {
+        "bug_id": 81,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Tela de Conversa] - Erro 403 ao enviar GIFs - Request Entity Too Large.\nResultado:\nO teste foi executado no dia 12/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deve permitir o envio de GIFs sem restrições de tamanho, garantindo que todas as requisições sejam processadas com sucesso, ou fazer um filtro em que apenas gifs menores aparecem para serem enviados' foi observado. O problema original 'Ao tentar enviar GIFs em uma conversa, alguns GIFs são enviados com sucesso, porém outros resultam em erro 403 Request Entity Too Large,  devido ao tamanho da requisição.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-12 15:15"
+    },
+    {
+        "bug_id": 83,
+        "status": "Reprovado",
+        "report": "[Validação de Teste - ❌ REPROVADO]\nFeature/Bug Testado: [TAGARELA] - [Fluxos] - Erro 500 ao tentar gravar áudio no editor de fluxo de automação.\nResultado:\nO teste foi executado no dia 12/01/2026 e a correção foi REPROVADA.\nDetalhes:\nO problema original ainda ocorre. \n'Ao tentar gravar um áudio em n TELA de  fluxo de automação, o sistema não consegue realizar a requisição de upload, resultando em um erro 500.'\n\n\nO comportamento esperado não foi atingido.",
+        "date": "2026-01-12 15:17"
+    },
+    {
+        "bug_id": 79,
+        "status": "Reprovado",
+        "report": "[Relatório de Validação de Teste - ❌ REPROVADO]\n\nFeature/Bug Testado: [TAGARELA] - [Criar novo membro] - Email com Template Incorreto ao Criar Novo Membro.\n\nData do Teste: 12/01/2026\n\nResultado:\nA correção foi REPROVADA.\n\nDetalhes:\nDurante o teste realizado, identificamos que ao tentar criar um novo membro, o e-mail com o template adequado não está sendo enviado para o endereço cadastrado. Isso impossibilita a verificação da correta funcionalidade do envio do e-mail.\n\nComportamento Esperado: \nEsperava-se que ao criar um novo membro, o sistema enviasse o e-mail com o template correto para o endereço cadastrado, possibilitando assim a validação da funcionalidade.\n\nConclusão:\nDiante dessa falha identificada, é necessário revisar a lógica de envio de e-mails no processo de criação de novos membros, a fim de garantir que o comportamento esperado seja atingido. \n\nAssinatura:\n[Seu Nome]\n[Especialista em Redação Técnica]",
+        "date": "2026-01-12 15:37"
+    },
+    {
+        "bug_id": 83,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Fluxos] - Erro 500 ao tentar gravar áudio no editor de fluxo de automação.\nResultado:\nO teste foi executado no dia 14/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deve permitir gravar um áudio e fazer a requisição de upload com sucesso, sem gerar erro 500.' foi observado. O problema original 'Ao tentar gravar um áudio em n TELA de  fluxo de automação, o sistema não consegue realizar a requisição de upload, resultando em um erro 500.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-14 11:50"
+    },
+    {
+        "bug_id": 84,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [] - Falha na renderização de imagens e erro 500 ao  fazer upload de imagens de perfil de membros.\nResultado:\nO teste foi executado no dia 14/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deve renderizar corretamente as imagens enviadas pelos usuários, tanto nas bubbles de chat quanto nos perfis, garantindo uma visualização adequada.' foi observado. O problema original 'Atualmente, as imagens estão sendo quebradas e ao fazer o upload de uma imagem, a mesma não está sendo renderizada corretamente nem nos bubbles  de chat, tanto como imagem de perfil quanto em mensagens enviadas.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-14 14:28"
+    },
+    {
+        "bug_id": 89,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Tela principal] - Permissão e status do membro não são exibidos corretamente na Sidebar.\nResultado:\nO teste foi executado no dia 16/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deveria exibir corretamente a permissão e o status de todos os membros na sidebar, incluindo atendentes financeiros, de forma clara e precisa.' foi observado. O problema original 'Atualmente, apenas o membro proprietário tem a permissão e o status exibidos corretamente na sidebar. Para os outros membros, a informação não está aparecentdo.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-16 11:41"
+    },
+    {
+        "bug_id": 87,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Painel de conversas] - Falha na atualização das mensagens recebidas do Telegram no Tagarela.\nResultado:\nO teste foi executado no dia 16/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deveria atualizar automaticamente as mensagens recebidas pelo Telegram no painel de conversa do Tagarela, sem a necessidade de intervenção do usuário.' foi observado. O problema original 'Atualmente, as mensagens recebidas pelo Telegram não estão sendo atualizadas no painel de conversa do Tagarela. É necessário enviar uma mensagem pelo Tagarela ou recarregar a página para visualizar as novas mensagens recebidas. Isso pode indicar um problema no WebSocket.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-16 11:47"
+    },
+    {
+        "bug_id": 85,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Painel de conversa] - Problema de atualização das últimas mensagens do contato.\nResultado:\nO teste foi executado no dia 16/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deve atualizar automaticamente a última mensagem recebida ou enviada de um contato no card do contato na coluna de listagem de contatos, garantindo que as informações estejam sempre corretas e atualizadas para o usuário.' foi observado. O problema original 'O sistema não está atualizando corretamente a última mensagem recebida ou enviada de um contato no painel de contatos, sendo necessario para a atualização dar reload na pagina ' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-16 11:54"
+    },
+    {
+        "bug_id": 74,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [PAinel de conversa] - Falha na preservação do estado da conversa após mudança de status.\nResultado:\nO teste foi executado no dia 16/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deve manter automaticamente a conversa selecionada e o painel de conversa carregado após mudanças de status, preservando o histórico e contexto existente.' foi observado. O problema original 'Após mudar o status da conversa, o painel de conversa não mantém a conversa selecionada, exigindo uma nova interação manual para recarregar o conteúdo.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-16 11:59"
+    },
+    {
+        "bug_id": 88,
+        "status": "Reprovado",
+        "report": "[Validação de Teste - ❌ REPROVADO]\nFeature/Bug Testado: [TAGARELA] - [editor de fluxo - webhook] - Falha no processamento de eventos no Webhook qunado adicionada uma condição.\nResultado:\nO teste foi executado no dia 16/01/2026 e a correção foi REPROVADA.\nDetalhes:\nO problema original ainda ocorre. \n'Atualmente, ao adicionar uma condição ao Webhook, o sistema falha em processar o evento corretamente, resultando em falta de resposta e falha em avançar para a próxima etapa do fluxo, MESMO QUe o evento tenha sido mandado'\n\n\nO comportamento esperado não foi atingido.",
+        "date": "2026-01-16 14:16"
+    },
+    {
+        "bug_id": 75,
+        "status": "Reprovado",
+        "report": "[Validação de Teste - ❌ REPROVADO]\nFeature/Bug Testado: [TAGARELA] - [PAinel de conversas] - Estilização de texto não é renderizada corretamente nos bubbles do painel de conversa.\nResultado:\nO teste foi executado no dia 19/01/2026 e a correção foi REPROVADA.\nDetalhes:\nO problema original ainda ocorre. \n'A formatação (negrito/itálico) aplicada no texto não é renderizada corretamente nos bubbles das mensagens no painel de conversa do Tagarela.'\n\n\nO comportamento esperado não foi atingido.",
+        "date": "2026-01-19 08:18"
+    },
+    {
+        "bug_id": 78,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Membros] - Email de resetar senha de um membro com template correto.\nResultado:\nO teste foi executado no dia 20/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deve enviar um e-mail com o template correto, de acordo com o e-mail estipulado pelo Figma, quando a senha de um membro é resetada.' foi observado. O problema original 'Atualmente, ao resetar a senha de um membro , o e-mail é enviado para o e-mail cadastrado, porém com um template genérico e errado, ao invés do template personalizado conforme o e-mail estipulado pelo Figma.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-20 10:19"
+    },
+    {
+        "bug_id": 90,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Painel de conversa] - Variáveis não renderizadas corretamente nos bubbles de mensagem.\nResultado:\nO teste foi executado no dia 20/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'O sistema deve renderizar corretamente os valores das variáveis nos bubbles de mensagem, exibindo o conteúdo atualizado das variáveis em cada momento da conversa.' foi observado. O problema original 'Atualmente, em algumas situações, as mensagens renderizadas dentro dos bubbles de conversa que utilizam variáveis dinâmicas estão exibindo o nome da variável (ex: {{nome}}) em vez do valor correspondente que deveria ser substituído naquele momento da conversa.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-20 10:40"
+    },
+    {
+        "bug_id": 59,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [fluxo] - Falha ado fluxo de enviar para geral mover conversa para a aba de pendente.\nResultado:\nO teste foi executado no dia 20/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Após configurar o fluxo para enviar o cliente para a aba de Pendentes e o cliente chegar ao final do fluxo, a conversa deve ser exibida na aba de Pendentes como esperado.' foi observado. O problema original 'Atualmente, quando o fluxo está configurado para enviar o cliente para a aba de Pendentes e o cliente chega ao final do fluxo, a conversa não é movida para a aba de Pendentes e permanece na aba de Automação.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-20 16:44"
+    },
+    {
+        "bug_id": 82,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Gerar audio com IA] - Erro 500  ao carregar a seleção de voz para geração de áudio com IA.\nResultado:\nO teste foi executado no dia 20/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Ao selecionar uma voz para geração de áudio com IA, a listagem das Voices deve ser exibida corretamente, permitindo a seleção para girar o áudio com IA sem erros.' foi observado. O problema original 'Ao tentar selecionar uma voz para geração de áudio com IA, a listagem das Voices retorna erro 500, impedindo a seleção e gerando indisponibilidade para girar o áudio com IA.' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-20 16:44"
+    },
+    {
+        "bug_id": 23,
+        "status": "Aprovado",
+        "report": "[Validação de Teste - ✅ APROVADO]\nFeature/Bug Testado: [TAGARELA] - [Chat de conversa] - Botão de Emojis não Funciona.\nResultado:\nO teste foi executado no dia 21/01/2026 e a correção foi APROVADA com sucesso.\nDetalhes:\nO comportamento esperado 'Ao clicar no botão de Emojis, deveria abrir uma modal para seleção de emojis conforme design no Figma' foi observado. O problema original 'Ao clicar no botão de Emojis, nada acontece' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-01-21 16:24"
+    }
+]
