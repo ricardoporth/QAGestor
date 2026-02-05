@@ -58,6 +58,7 @@ def ensure_project_structure(project_name):
     os.makedirs(os.path.join(base, "test_suites"), exist_ok=True)
     os.makedirs(os.path.join(base, "user_stories"), exist_ok=True)
     os.makedirs(os.path.join(base, "executions"), exist_ok=True)
+    os.makedirs(os.path.join(base, "notes"), exist_ok=True) # <-- ADICIONE ESTA LINHA
 
 def _json_load(path):
     if not os.path.exists(path):
