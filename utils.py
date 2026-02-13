@@ -5,50 +5,120 @@ import shutil
 from datetime import datetime
 import uuid
 import streamlit as st
+import io
 
 # ---------- Constantes ----------
 PROJECTS_DIR = "projects"
 
+def export_project_to_excel(project_name):
+    """Gera um arquivo Excel em memória com todas as informações do projeto."""
+    # Carrega os dados usando as funções que você já tem
+    bugs_df = load_bugs(project_name)
+    test_cases_df = get_all_test_cases(project_name)
+    stories = load_user_stories(project_name)
+    validations = load_validations(project_name)
+    notes = load_project_notes(project_name)
+
+    # Converte listas para DataFrames
+    stories_df = pd.DataFrame(stories)
+    validations_df = pd.DataFrame(validations)
+    notes_df = pd.DataFrame([notes])
+
+    # Cria um buffer para salvar o arquivo Excel
+    output = io.BytesIO()
+    
+    # Usa o XlsxWriter como engine para criar abas
+    with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
+        if not bugs_df.empty:
+            bugs_df.to_excel(writer, sheet_name='Bugs', index=False)
+        
+        if not test_cases_df.empty:
+            test_cases_df.to_excel(writer, sheet_name='Casos de Teste', index=False)
+            
+        if not stories_df.empty:
+            stories_df.to_excel(writer, sheet_name='User Stories', index=False)
+            
+        if not validations_df.empty:
+            validations_df.to_excel(writer, sheet_name='Historico Validações', index=False)
+            
+        if not notes_df.empty:
+            notes_df.to_excel(writer, sheet_name='Notas', index=False)
+
+    return output.getvalue()
+
 def render_sidebar():
     st.sidebar.title("Gerenciador de Projetos")
+    
+    # --- Seção: Criar Novo ---
     with st.sidebar.form("new_project_form"):
         new_project_name = st.text_input("Nome do Novo Projeto")
         if st.form_submit_button("Criar Projeto") and new_project_name:
             project_path = os.path.join(PROJECTS_DIR, new_project_name)
             if not os.path.exists(project_path):
-                os.makedirs(project_path)
+                ensure_project_structure(new_project_name)
                 st.sidebar.success(f"Projeto '{new_project_name}' criado!")
                 st.session_state.selected_project = new_project_name
                 st.rerun()
             else:
                 st.sidebar.error("Projeto já existe.")
 
+    # Lista projetos existentes
     projects = get_project_list()
     if not projects:
-        st.sidebar.warning("Nenhum projeto encontrado. Crie um acima para começar.")
+        st.sidebar.warning("Nenhum projeto encontrado.")
         if 'selected_project' in st.session_state:
             del st.session_state.selected_project
         st.stop()
 
-    # --- INÍCIO DA CORREÇÃO DEFINITIVA ---
-
-    # PASSO 1: Garantir que o estado da sessão tenha um valor válido na primeira execução.
-    # Se 'selected_project' não existe OU o projeto salvo foi deletado, define um padrão.
+    # --- Lógica de Seleção ---
     if "selected_project" not in st.session_state or st.session_state.selected_project not in projects:
         st.session_state.selected_project = projects[0]
 
-    # PASSO 2: Encontrar o índice do projeto que está GARANTIDAMENTE no session_state.
-    # Não precisamos mais de try-except porque o PASSO 1 limpou os possíveis erros.
-    current_project_index = projects.index(st.session_state.selected_project)
+    current_index = projects.index(st.session_state.selected_project)
 
-    # PASSO 3: Criar o selectbox. O `on_change` é opcional, mas ajuda na clareza.
-    # A combinação de 'key' e 'index' é o que faz a mágica funcionar.
-    st.sidebar.selectbox(
+    # Seletor Principal
+    selected_project = st.sidebar.selectbox(
         "Selecione um Projeto Ativo",
         options=projects,
-        key="selected_project",
-        index=current_project_index
+        index=current_index,
+        key="project_selector"
     )
+    st.session_state.selected_project = selected_project
+
+    # --- NOVIDADE: GERENCIAR PROJETO SELECIONADO ---
+    with st.sidebar.expander("⚙️ Configurações do Projeto"):
+        st.subheader("Renomear Projeto")
+        new_name_input = st.text_input("Novo nome", value=selected_project)
+        
+        if st.button("Confirmar Renomeação", use_container_width=True):
+            if new_name_input and new_name_input != selected_project:
+                success, message = rename_project(selected_project, new_name_input)
+                if success:
+                    # Atualiza o session_state para o novo nome imediatamente
+                    st.session_state.selected_project = new_name_input
+                    st.success(message)
+                    st.rerun()
+                else:
+                    st.error(message)
+            else:
+                st.warning("Informe um nome diferente do atual.")
+
+    # --- Seção de Exportação ---
+    st.sidebar.markdown("---")
+    st.sidebar.subheader("📥 Exportação")
+    if st.session_state.selected_project:
+        project_active = st.session_state.selected_project
+        try:
+            excel_data = export_project_to_excel(project_active)
+            st.sidebar.download_button(
+                label="Baixar Excel do Projeto",
+                data=excel_data,
+                file_name=f"Backup_{project_active}.xlsx",
+                mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                use_container_width=True
+            )
+        except Exception as e:
+            st.sidebar.error(f"Erro no Excel: {e}")
 
 # ---------- Helpers ----------
 def ensure_project_structure(project_name):
@@ -351,3 +421,77 @@ def save_project_notes(project, content):
     }
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+
+def export_project_to_excel(project_name):
+    """Gera um buffer de memória contendo um Excel com todos os dados do projeto."""
+    
+    # 1. Carregar todos os dados
+    bugs_df = load_bugs(project_name)
+    test_cases_df = get_all_test_cases(project_name)
+    validations = load_validations(project_name)
+    stories = load_user_stories(project_name)
+    criteria = load_acceptance_criteria(project_name)
+    scenarios = load_scenarios(project_name)
+    notes = load_project_notes(project_name)
+
+    # Converter listas simples para DataFrames
+    validations_df = pd.DataFrame(validations)
+    stories_df = pd.DataFrame(stories)
+    criteria_df = pd.DataFrame(criteria)
+    scenarios_df = pd.DataFrame(scenarios)
+    notes_df = pd.DataFrame([notes]) # Transforma nota única em linha
+
+    # 2. Criar um buffer de bytes para o Excel
+    output = io.BytesIO()
+    
+    with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
+        # Salvar cada DF em uma aba
+        if not bugs_df.empty:
+            bugs_df.to_excel(writer, sheet_name='Bugs', index=False)
+        
+        if not test_cases_df.empty:
+            test_cases_df.to_excel(writer, sheet_name='Casos de Teste', index=False)
+            
+        if not stories_df.empty:
+            stories_df.to_excel(writer, sheet_name='User Stories', index=False)
+            
+        if not criteria_df.empty:
+            criteria_df.to_excel(writer, sheet_name='Critérios Aceite', index=False)
+            
+        if not scenarios_df.empty:
+            scenarios_df.to_excel(writer, sheet_name='Cenários BDD', index=False)
+            
+        if not validations_df.empty:
+            validations_df.to_excel(writer, sheet_name='Histórico Validações', index=False)
+            
+        notes_df.to_excel(writer, sheet_name='Notas do Projeto', index=False)
+
+    return output.getvalue()
+
+def rename_project(old_name, new_name):
+    """Renomeia a pasta do projeto no sistema de arquivos."""
+    if not new_name or old_name == new_name:
+        return False, "Nome inválido ou igual ao atual."
+
+    old_path = os.path.join(PROJECTS_DIR, old_name)
+    new_path = os.path.join(PROJECTS_DIR, new_name)
+
+    if os.path.exists(new_path):
+        return False, "Já existe um projeto com esse novo nome."
+
+    try:
+        os.rename(old_path, new_path)
+        return True, "Projeto renomeado com sucesso!"
+    except Exception as e:
+        return False, f"Erro ao renomear: {e}"
+
+def delete_project(project_name):
+    """Exclui permanentemente a pasta do projeto."""
+    project_path = os.path.join(PROJECTS_DIR, project_name)
+    if os.path.exists(project_path):
+        try:
+            shutil.rmtree(project_path)
+            return True, f"Projeto '{project_name}' excluído com sucesso."
+        except Exception as e:
+            return False, f"Erro ao excluir pasta: {e}"
+        return False, "Projeto não encontrado."

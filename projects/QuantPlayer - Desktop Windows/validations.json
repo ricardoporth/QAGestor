@@ -1,0 +1,8 @@
+[
+    {
+        "bug_id": 6,
+        "status": "Reprovado",
+        "report": "[Testing validation - ❌ Reproved]\nFeature/: [Wplay-Desktop-Windows] - [] - When clicking on the channel player to pause playback, the pause icon is displayed in the interface, but the video continues playing without stopping the audio or image..\n\n\nDetails= \n\nActual Behavior:\nThe playback does not stop and the media continues running.\n\n\nExpected Behavior:\nThe video playback stops and no media continues playing.\n\n\nGiven a video is currently playing on the channel player\nWhen the user triggers the stop action\nThen the player should stop immediately, \n",
+        "date": "2026-02-09 19:18"
+    }
+]

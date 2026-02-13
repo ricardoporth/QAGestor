@@ -50,7 +50,7 @@
         "comportamento_ideal": "Ao focar no TextArea, a barra de ferramentas e todos os ícones associados devem aparecer normalmente, permitindo o uso de todas as funcionalidades",
         "comportamento_atual": "Ao focar no TextArea, a barra de ferramentas e todos os ícones associados não estão aparecendo, impedindo o uso de todas as funcionalidades previstas",
         "bdd": "Cenário: Ícones e barra de ferramentas não aparecem ao focar no TextArea\nDado que estou na tela de conversa  com o TextArea clicada\nE a barra de ferramentas com ícones está prevista na interface\nQuando eu clico dentro do TextArea\nEntão a barra de ferramentas com todos os ícones é exibida corretamente",
-        "status": "No Jira",
+        "status": "Mapeado",
         "data_criacao": "2026-01-22 14:25",
         "severidade": "Médio",
         "prioridade": "P2"
@@ -136,7 +136,7 @@
         "bdd": "Cenário: Exibir regras compatíveis com condição de Dias da Semana\n\nDado que o usuário esteja configurando um bloco de condição\nQuando selecionar o tipo de condição Dias da Semana\nEntão o sistema deve exibir somente as regras “É igual a  e Não é igual a” no campo de regra",
         "status": "Novo",
         "data_criacao": "2026-01-23 16:19",
-        "severidade": "Crítico",
-        "prioridade": "P1"
+        "severidade": "Médio",
+        "prioridade": "P2"
     }
 ]
