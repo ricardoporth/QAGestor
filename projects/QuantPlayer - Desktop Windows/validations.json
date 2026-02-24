@@ -2,7 +2,19 @@
     {
         "bug_id": 6,
         "status": "Reprovado",
-        "report": "[Testing validation - ❌ Reproved]\nFeature/: [Wplay-Desktop-Windows] - [] - When clicking on the channel player to pause playback, the pause icon is displayed in the interface, but the video continues playing without stopping the audio or image..\n\n\nDetails= \n\nActual Behavior:\nThe playback does not stop and the media continues running.\n\n\nExpected Behavior:\nThe video playback stops and no media continues playing.\n\n\nGiven a video is currently playing on the channel player\nWhen the user triggers the stop action\nThen the player should stop immediately, \n",
+        "report": "      \n========================================================\n[Testing validation - ❌ Reproved]\nFeature/: [Wplay-Desktop-Windows] - [] - When clicking on the channel player to pause playback, the pause icon is displayed in the interface, but the video continues playing without stopping the audio or image..\n\n\nDetails= \n\nActual Behavior:\nThe playback does not stop and the media continues running.\n\n\nExpected Behavior:\nThe video playback stops and no media continues playing.\n\n\nGiven a video is currently playing on the channel player\nWhen the user triggers the stop action\nThen the player should stop immediately, \n",
         "date": "2026-02-09 19:18"
+    },
+    {
+        "bug_id": 14,
+        "status": "Reprovado",
+        "report": "      \n========================================================\n❌ Test Validation – FAILED\n\nApp: QuantPlayer – Desktop Windows\nFeature/Bug Tested:\nSuggestion: When reaching the end of each list (Home, Movies, Series, Movie Details, Series Details), the navigation arrow pointing to the next item should not remain visible, similar to the behavior on the first item of the section.\n\n Test Result\nThe test was executed on 02/18/2026, and the fix was FAILED.\n\nIssues Found\n\nTrailer List Issue\n\nWhen the user reaches the end or the beginning of the trailer list, the navigation arrow (next/previous) is still displayed.\n\nThe arrow should be hidden when there are no more items available for navigation.\n\nSame Behavior in Other Categories\nThe same issue occurs across all movie and series lists, including:\n\nMovies \nSeries\n\nThe navigation arrows remain visible even when the user is at the boundary (first or last item) of the list.",
+        "date": "2026-02-18 12:15"
+    },
+    {
+        "bug_id": 12,
+        "status": "Reprovado",
+        "report": "      \n========================================================\n❌ Test Validation – FAILED\n\nApp: QuantPlayer – Desktop Windows\nFeature/Bug Tested:\n[SUGGESTION] – The channel preview pause and resume should accept interactions at its center.\n\nTest Result\n\nThe test was executed on 02/18/2026, and the fix was FAILED.\n\nDetails\n\nThis is a business rule adjustment.\n\nCurrently, when the user moves the mouse over the mini player and/or in full screen mode, the central pause/play button becomes visible and remains visible for a period of time — even if the player is already running. Simply hovering the mouse over the screen triggers the button to appear.\n\nCurrent Behavior:\n\nMoving the mouse over the player displays the central pause/play button.\n\nThe button remains visible for a few seconds, even without user interaction (click).\n\nThis occurs in both mini player and full screen modes.\n\nExpected Behavior:\n\nThe central pause/play button should become visible only when the user clicks on the screen.\n\nAfter approximately 5 seconds, the button should automatically disappear if there is no further interaction.\n\nThe current implementation does not follow the expected interaction rule and therefore the validation is FAILED.",
+        "date": "2026-02-18 12:22"
     }
 ]

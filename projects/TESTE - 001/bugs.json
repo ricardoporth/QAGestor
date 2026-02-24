@@ -9,9 +9,7 @@
         "comportamento_atual": "",
         "bdd": "",
         "status": "Aprovado",
-        "data_criacao": "2026-01-21 20:32",
-        "severidade": "Médio",
-        "prioridade": "P2"
+        "data_criacao": "2026-01-21 20:32"
     },
     {
         "id": 2,
@@ -23,23 +21,7 @@
         "comportamento_atual": "",
         "bdd": "",
         "status": "Aprovado",
-        "data_criacao": "2026-01-21 20:38",
-        "severidade": "Médio",
-        "prioridade": "P2"
-    },
-    {
-        "id": 3,
-        "titulo": "funerari",
-        "tela": "construção",
-        "modulo": "sdasd",
-        "descricao": "",
-        "comportamento_ideal": "",
-        "comportamento_atual": "",
-        "bdd": "",
-        "status": "No Jira",
-        "data_criacao": "2026-01-21 20:52",
-        "severidade": "Médio",
-        "prioridade": "P2"
+        "data_criacao": "2026-01-21 20:38"
     },
     {
         "id": 4,
@@ -51,9 +33,7 @@
         "comportamento_atual": "",
         "bdd": "",
         "status": "Arrumado",
-        "data_criacao": "2026-01-21 20:53",
-        "severidade": "Médio",
-        "prioridade": "P2"
+        "data_criacao": "2026-01-21 20:53"
     },
     {
         "id": 5,
@@ -64,10 +44,8 @@
         "comportamento_ideal": "if salvar_direto:\n",
         "comportamento_atual": "if salvar_direto:\n",
         "bdd": "if salvar_direto:\nif salvar_direto:\nif salvar_direto:\nif salvar_direto:\nif salvar_direto:\nif salvar_direto:\n",
-        "status": "Em Teste",
-        "data_criacao": "2026-01-21 20:54",
-        "severidade": "Médio",
-        "prioridade": "P2"
+        "status": "Reprovado",
+        "data_criacao": "2026-01-21 20:54"
     },
     {
         "id": 6,
@@ -79,9 +57,7 @@
         "comportamento_atual": "O contador de mensagens não visualizadas na listagem de contatos está exibindo sempre o valor 1, independente do número real de mensagens pendentes.",
         "bdd": "Cenário: Verificar contador de mensagens não visualizadas na listagem de contatos\nDado que o usuário acessa a listagem de contatos\nE existem mensagens não visualizadas pendentes\nQuando o usuário envia novas mensagens para um contato\nE visualiza as mensagens recebidas\nEntão o contador de mensagens não visualizadas deve ser atualizado corretamente",
         "status": "Aprovado",
-        "data_criacao": "2026-01-21 20:56",
-        "severidade": "Médio",
-        "prioridade": "P2"
+        "data_criacao": "2026-01-21 20:56"
     },
     {
         "id": 7,
@@ -93,22 +69,18 @@
         "comportamento_atual": "",
         "bdd": "",
         "status": "Aprovado",
-        "data_criacao": "2026-01-21 22:35",
-        "severidade": "Médio",
-        "prioridade": "P2"
+        "data_criacao": "2026-01-21 22:35"
     },
     {
         "id": 8,
-        "titulo": "Problema no contador de mensagens não visualizadas na listagem de contatos",
-        "tela": "painel de conversa",
-        "modulo": "convaer",
-        "descricao": "- Enviar mensagem para um contato existente\n- Verificar se o contador de mensagens não visualizadas não atualiza\n- Receber mensagem de um contato existente\n- Verificar se o contador de mensagens não visualizadas não atualiza novamente",
-        "comportamento_ideal": "O contador de mensagens não visualizadas na listagem de contatos deve ser atualizado corretamente para refletir o número real de mensagens não lidas, tanto ao receber quanto ao enviar novas mensagens.",
-        "comportamento_atual": "O contador de mensagens não visualizadas na listagem de contatos não está sendo atualizado corretamente quando novas mensagens são recebidas e enviadas.",
-        "bdd": "Cenário: Contador de mensagens não atualiza na listagem de contatos\nDado que o usuário envia uma mensagem para um contato existente\nE o usuário verifica se o contador de mensagens não visualizadas não atualiza\nQuando o usuário recebe uma mensagem de um contato existente\nE o usuário verifica se o contador de mensagens não visualizadas não atualiza novamente\nEntão o contador de mensagens não visualizadas deve refletir corretamente o número de mensagens não lidas",
-        "status": "Novo",
-        "data_criacao": "2026-01-21 22:36",
-        "severidade": "Médio",
-        "prioridade": "P2"
+        "titulo": "Login error causing app crash",
+        "tela": "login",
+        "modulo": "Autenticação",
+        "descricao": "- Open the app\n- Click on the login button\n- Enter valid login data\n- Click on 'Sign in'",
+        "comportamento_ideal": "The app should allow the user to log in successfully and access their account normally, without any crashes.",
+        "comportamento_atual": "When the user tries to log in, the app crashes and closes unexpectedly.",
+        "bdd": "Scenario: Successful login without crashes\nGiven the user has opened the app\nAnd entered the correct credentials\nWhen the user clicks on 'Sign in'\nThen the app should login successfully and should not crash",
+        "status": "Reprovado",
+        "data_criacao": "2026-02-20 12:18"
     }
 ]

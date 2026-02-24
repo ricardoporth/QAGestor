@@ -1,0 +1,98 @@
+[
+    {
+        "bug_id": 1,
+        "status": "Aprovado",
+        "report": "      \n========================================================\n[Test Validation - ✅ APPROVED]\n========================================================\nREPORT ID: - 1\nAPP: QuantPlayer - Android TV BOX\nTITLE: Suggestion — Increase the bottom vertical padding of the pages, as the “You May Like” section is visually too close to the lower page boundary, which impacts layout spacing and overall readability.\n========================================================\n\nRESULT:\nThe test was executed on 02/19/2026 and the fix was SUCCESSFULLY APPROVED.\nDETAILS:\nThe expected behavior '' was observed. The original issue '' no longer occurs.\nNo side effects (regressions) were found in other screen elements.",
+        "date": "2026-02-19 15:41"
+    },
+    {
+        "bug_id": 2,
+        "status": "Aprovado",
+        "report": "      \n========================================================\n[Validação de Teste - ✅ APROVADO]\n========================================================\nREPORT ID: - 2\nAPP: QuantPlayer- Android TV BOX\nTITLE: Suggestion — Suggestion — When the focus reaches the end of a section, if the user continues pressing the navigation key (e.g., right), the focus should remain fixed at the last element instead of moving to the section above. The focus should only move when the user explicitly navigates upward using the appropriate input.\n======================================================== \n\nRESULTADO:\nO teste foi executado no dia 19/02/2026 e a correção foi APROVADA com sucesso.\nDETALHES:\nO comportamento esperado '' foi observado. O problema original '' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-02-19 15:49"
+    },
+    {
+        "bug_id": 3,
+        "status": "Aprovado",
+        "report": "      \n========================================================\n[Test Validation - ✅ APPROVED]\n========================================================\nREPORT ID: - 3\nAPP: QuantPlayer - Android TV BOX\nTITLE: Suggestion - The cover images for each episode of a TV series do not appear in the episode image, or at least the series cover image should be used as the default for the episodes.\n========================================================\n\nRESULT:\nThe test was executed on 02/19/2026, and the fix was SUCCESSFULLY APPROVED.\nDETAILS:\nThe expected behavior '' was observed. The original issue '' no longer occurs.\nNo side effects (regression) were found on other screen elements.",
+        "date": "2026-02-19 15:50"
+    },
+    {
+        "bug_id": 4,
+        "status": "Reprovado",
+        "report": "      \n========================================================\n[Test Validation - ❌ FAILED]\n========================================================\nREPORT ID: - 4\nAPP: QuantPlayer- Android TV BOX\nTITLE: [bug]-Player — The series and movies player intermittently freezes during playback.\n========================================================\n\nRESULT:\nThe test was conducted on 02/19/2026 and the fix FAILED.\nDETAILS:\nThe original problem still occurs; the series and movies player still experiences small freezes and hang-ups.\n\nThe expected behavior was not achieved.",
+        "date": "2026-02-19 16:04"
+    },
+    {
+        "bug_id": 5,
+        "status": "Aprovado",
+        "report": "\n========================================================\n[Test Validation - ✅ APPROVED]\n========================================================\nREPORT ID: - 5\nAPP: QuantPlayer - Android TV BOX\nTITLE: Suggestion - channel = when the focus reaches the last elements (end of a column) like category or channels, if the user tries to force it by pressing further, the focus should stay fixed and not move to the session above, instead of the user moving by pressing down on the keyboard\n========================================================\n\nRESULT:\nThe test was executed on 02/19/2026 and the fix was SUCCESSFULLY APPROVED.\nDETAILS:\nThe expected behavior '' was observed. The original problem '' no longer occurs.\nNo side effects (regressions) were found in other elements on the screen.",
+        "date": "2026-02-19 16:12"
+    },
+    {
+        "bug_id": 6,
+        "status": "Reprovado",
+        "report": "      \n========================================================\n[Test Validation - ❌ FAILED]\n========================================================\nREPORT ID: - 6\nAPP: QuantPlayer - Android TV BOX\nTITLE: [bug] - Channel — When the user navigates to the first or last channel and selects it, the channel starts playing in the mini preview component. If the user then navigates to the preview and presses the Next or Previous channel buttons, the application crashes. This issue could be resolved by disabling or hiding the Next and Previous buttons when the user reaches the first or last channel, preventing any further navigation beyond the available channel range.\n========================================================\n\nRESULT: The test was conducted on 02/19/2026 and the fix was FAILED.\nDETAILS: Although the app no longer crashes, the forward or backward button should be disabled based on the context of the channel.",
+        "date": "2026-02-19 16:17"
+    },
+    {
+        "bug_id": 7,
+        "status": "Reprovado",
+        "report": "      \n========================================================\n[Test Validation - ❌ FAILED]\n========================================================\nREPORT ID: - 7\nAPP: QuantPlayer - Android TV BOX\nTITLE: [Bug] Channel Player — The channel player is unresponsive and does not register any user interaction. All click actions are ignored, preventing any form of interaction with the player.\n========================================================\n\nRESULT:\nThe test was conducted on 02/19/2026 and the fix was REJECTED.\nDETAILS:\nThe original issue still occurs; when I am on a channel in full-screen mode and click with the remote control, nothing happens, such as trying to pause or attempting to skip to the next channel.",
+        "date": "2026-02-19 16:23"
+    },
+    {
+        "bug_id": 8,
+        "status": "Aprovado",
+        "report": "      \n========================================================\n[Test Validation - ✅ APPROVED]\n========================================================\nREPORT ID: - 8\nAPP: QuantPlayer- Android TV BOX\nTITLE: suggestion - Configuration — When the language is set to Portuguese, the date format should follow the DD/MM/YYYY standard.\n========================================================\n\nRESULT:\nThe test was carried out on 02/19/2026 and the fix was SUCCESSFULLY APPROVED.\nDETAILS:\nThe expected behavior '' was observed. The original issue '' no longer occurs.\nNo side effects (regressions) were found on other elements of the screen.",
+        "date": "2026-02-19 16:25"
+    },
+    {
+        "bug_id": 9,
+        "status": "Aprovado",
+        "report": "      \n========================================================\n[Test Validation - ✅ APPROVED]\n========================================================\nREPORT ID: - 9\nAPP: QuantPlayer - Android TV BOX\nTITLE: [bug] - From the Home screen, I perform a search (for example, “Harry Potter”) and select an item using the Confirm button. Instead of opening the selected content, the app redirects me back to the Home page. If I try again and select a series, nothing happens. When I perform another search (for example, “Avengers”) and select a result, the app again redirects directly from the Search page back to the Home page. \n========================================================\n\nRESULT: \nThe test was executed on 02/19/2026 and the fix was successfully APPROVED. \nDETAILS: \nThe expected behavior '' was observed. The original issue '' no longer occurs. \nNo side effects (regressions) were found in other screen elements.",
+        "date": "2026-02-19 16:36"
+    },
+    {
+        "bug_id": 9,
+        "status": "Aprovado",
+        "report": "      \n========================================================\n[Validação de Teste - ✅ APROVADO]\n========================================================\nREPORT ID: - 9\nAPP: QuantPlayer- Android TV BOX\nTITLE: bug] - From the Home screen, I perform a search (for example, “Harry Potter”) and select an item using the Confirm button. Instead of opening the selected content, the app redirects me back to the Home page.  If I try again and select a series, nothing happens.  When I perform another search (for example, “Avengers”) and select a result, the app again redirects directly from the Search page back to the Home page.\n========================================================\n\nRESULTADO:\nO teste foi executado no dia 20/02/2026 e a correção foi APROVADA com sucesso.\nDETALHES:\nO comportamento esperado '' foi observado. O problema original '' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-02-20 12:13"
+    },
+    {
+        "bug_id": 4,
+        "status": "Reprovado",
+        "report": "      \n========================================================\n[Test Validation - ❌ FAILED]\n========================================================\nREPORT ID: - 4\nAPP: QuantPlayer- Android TV BOX\nTITLE: [bug]-Player — The series and movies player intermittently freezes during playback.\n========================================================\n\nRESULT:\nThe test was conducted on 02/19/2026 and the fix FAILED.\nDETAILS:\nThe original problem still occurs; the series and movies player still experiences small freezes and hang-ups.\n\nThe expected behavior was not achieved.",
+        "date": "2026-02-20 12:14"
+    },
+    {
+        "bug_id": 4,
+        "status": "Reprovado",
+        "report": "      \n========================================================\n[Test Validation - ❌ FAILED]\n========================================================\nREPORT ID: - 4\nAPP: QuantPlayer- Android TV BOX\nTITLE: [bug]-Player — The series and movies player intermittently freezes during playback.\n========================================================\n\nRESULT:\nThe test was conducted on 02/19/2026 and the fix FAILED.\nDETAILS:\nThe original problem still occurs; the series and movies player still experiences small freezes and hang-ups.\n\nThe expected behavior was not achieved.",
+        "date": "2026-02-20 12:15"
+    },
+    {
+        "bug_id": 11,
+        "status": "Aprovado",
+        "report":"       \n========================================================\n[Test Validation - ✅ APPROVED]\n========================================================\nREPORT ID: - 11\nAPP: QuantPlayer - Android TV BOX\nTITLE: [SUGGESTION] - Navigation Issue – Series header jumps to \"You Might Like\" section when reaching the last season item\n========================================================\n\nRESULT:\nThe test was executed on 02/23/2026 and the correction was successfully APPROVED.\n\nDETAILS:\nThe expected behavior is 'When reaching the last item of the season header, navigation should remain on the last element and not automatically switch to another section. It should follow the same navigation pattern applied to the first item.' It was observed. The original problem 'When the last item of the season header is reached, navigation automatically jumps to the You Might Like section, causing unexpected behavior.' no longer occurs.\n\nNo side effects (regression) were found in the other screen elements.",
+        "date": "2026-02-23 16:18"
+    },
+    {
+        "bug_id": 11,
+        "status": "Aprovado",
+        "report": "       \n========================================================\n[Test Validation - ✅ APPROVED]\n========================================================\nREPORT ID: - 11\nAPP: QuantPlayer - Android TV BOX\nTITLE: [SUGGESTION] - Navigation Issue – Series header jumps to \"You Might Like\" section when reaching the last season item\n========================================================\n\nRESULT:\nThe test was executed on 02/23/2026 and the correction was successfully APPROVED.\n\nDETAILS:\nThe expected behavior is 'When reaching the last item of the season header, navigation should remain on the last element and not automatically switch to another section. It should follow the same navigation pattern applied to the first item.' It was observed. The original problem 'When the last item of the season header is reached, navigation automatically jumps to the You Might Like section, causing unexpected behavior.' no longer occurs.\n\nNo side effects (regression) were found in the other screen elements.",
+        "date": "2026-02-23 16:20"
+    },
+    {
+        "bug_id": 12,
+        "status": "Reprovado",
+        "report": "       \n========================================================\n[Test Validation - ❌ FAILED]\n========================================================\nREPORT ID: - 12\nAPP: QuantPlayer - Android TV BOX\nTITLE: [ui] - Broken side padding when clicking 'Show All' in category content view\"\n========================================================\n\nRESULT:\nThe test was run on 02/23/2026 and the fix was FAILED.\n\nDETAILS:\nThe original problem still occurs.\n\n''\n\nThe expected behavior was not achieved.",
+        "date": "2026-02-23 16:25"
+    },
+    {
+        "bug_id": 10,
+        "status": "Reprovado",
+        "report": "       \n========================================================\n[Test Validation - ❌ FAILED]\n========================================================\nREPORT ID: - 10\nAPP: QuantPlayer - Android TV BOX\nTITLE: Navigation Failure when Clicking on Android Native Search Button Keyboard\n========================================================\n\nRESULT:\nThe test was run on 02/23/2026 and the fix was FAILED.\n\nDETAILS:\nThe original problem still occurs.\n\n'When performing a search in the application, instead of allowing navigation on the search results after clicking on the magnifying glass icon, the app redirects the user to the home screen.'\n\nThe expected behavior was not achieved.",
+        "date": "2026-02-23 16:35"
+    }
+]

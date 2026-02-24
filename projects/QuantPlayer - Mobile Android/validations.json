@@ -2,13 +2,13 @@
     {
         "bug_id": 4,
         "status": "Reprovado",
-        "report": "[Test Validation - ❌ REPROVED]\nFeature/Bug tested: [wplay-Android mobile] - The expiration date field could be displayed in a Day/Month/Year format so users can easily know when their plan expires..\nDetails:\nWhen I change the language to Portuguese, the expiration date field should be displayed in the Day/Month/Year format, but it is currently showing Month/Day/Year.",
+        "report": "      \n========================================================\n[Test Validation - ❌ REPROVED]\nFeature/Bug tested: [wplay-Android mobile] - The expiration date field could be displayed in a Day/Month/Year format so users can easily know when their plan expires..\nDetails:\nWhen I change the language to Portuguese, the expiration date field should be displayed in the Day/Month/Year format, but it is currently showing Month/Day/Year.",
         "date": "2026-02-09 14:53"
     },
     {
         "bug_id": 6,
         "status": "Reprovado",
-        "report": "[Validation Testing- ❌ REPROVADO]\nFeature/Bug tested: [wplay-mobile] - [] - When selecting a movie or series and navigating to the content details screen, scrolling to the bottom of the page causes the recommended titles section to be partially overlapped by the native Android navigation buttons (system navigation bar)..\nDetails: it is at the same way that it was before.\n.",
+        "report": "      \n========================================================\n[Validation Testing- ❌ REPROVADO]\nFeature/Bug tested: [wplay-mobile] - [] - When selecting a movie or series and navigating to the content details screen, scrolling to the bottom of the page causes the recommended titles section to be partially overlapped by the native Android navigation buttons (system navigation bar)..\nDetails: it is at the same way that it was before.\n.",
         "date": "2026-02-09 14:57"
     }
 ]

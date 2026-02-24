@@ -22,7 +22,7 @@
         "comportamento_ideal": "Após realizar um report bem sucedido, o estado do botão de Reportar deve mudar para 'Reportado'",
         "comportamento_atual": "Após realizar um report bem sucedido, o estado do botão de Reportar permanece como 'Reportar'",
         "bdd": null,
-        "status": "No Jira",
+        "status": "Aprovado",
         "data_criacao": "2025-10-03 14:04",
         "severidade": "Médio",
         "prioridade": "P2"

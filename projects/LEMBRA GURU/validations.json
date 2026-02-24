@@ -1,0 +1,14 @@
+[
+    {
+        "bug_id": 1,
+        "status": "Aprovado",
+        "report": "\n========================================================\n[Validação de Teste - ✅ APROVADO]\n========================================================\nREPORT ID: - 1\nAPP: LEMBRA GURU\nTITLE: [UI] - Ajustar formatação da coluna de vencimento na interface do usuário (UI) - adição de espaço entre dias faltantes e data dd/mm/aaaa.\n========================================================\n\nRESULTADO:\nO teste foi executado no dia 23/02/2026 e a correção foi APROVADA com sucesso.\nDETALHES:\nO comportamento esperado '' foi observado. O problema original '' não ocorre mais.\nNenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela.",
+        "date": "2026-02-23 11:45"
+    },
+    {
+        "bug_id": 2,
+        "status": "Reprovado",
+        "report": "\n========================================================\n[Validação de Teste - ❌ REPROVADO]\n========================================================\nREPORT ID: - 2\nAPP: LEMBRA GURU\nTITLE: Problema – Alteração de medalhas (cor e símbolo)\n========================================================\n\nRESULTADO:\nO teste foi executado no dia 23/02/2026 e a correção foi REPROVADA.\nDETALHES:\nO problema original ainda ocorre. \n'Atualmente, não é possível alterar a cor e o símbolo das medalhas mesmo com a API Key preenchida,  pois os compos de badgeColor e badgeIcon nao salvam na rota https://api.flowgestor.io/provider-configs\n\n\nO comportamento esperado não foi atingido.",
+        "date": "2026-02-23 11:53"
+    }
+]

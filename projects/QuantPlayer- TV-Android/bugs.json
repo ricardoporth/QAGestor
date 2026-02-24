@@ -8,7 +8,7 @@
         "comportamento_ideal": "",
         "comportamento_atual": "",
         "bdd": "",
-        "status": "Novo",
+        "status": "Aprovado",
         "data_criacao": "2026-02-10 15:21",
         "severidade": "Médio",
         "prioridade": "P2"
@@ -22,7 +22,7 @@
         "comportamento_ideal": "",
         "comportamento_atual": "",
         "bdd": "",
-        "status": "Novo",
+        "status": "Aprovado",
         "data_criacao": "2026-02-10 15:21",
         "severidade": "Médio",
         "prioridade": "P2"
@@ -36,7 +36,7 @@
         "comportamento_ideal": "",
         "comportamento_atual": "",
         "bdd": "",
-        "status": "Novo",
+        "status": "Aprovado",
         "data_criacao": "2026-02-10 15:22",
         "severidade": "Médio",
         "prioridade": "P2"
@@ -50,7 +50,7 @@
         "comportamento_ideal": "",
         "comportamento_atual": "",
         "bdd": "",
-        "status": "Novo",
+        "status": "Reprovado",
         "data_criacao": "2026-02-10 15:22",
         "severidade": "Médio",
         "prioridade": "P2"
@@ -64,7 +64,7 @@
         "comportamento_ideal": "",
         "comportamento_atual": "",
         "bdd": "",
-        "status": "Novo",
+        "status": "Aprovado",
         "data_criacao": "2026-02-10 15:22",
         "severidade": "Médio",
         "prioridade": "P2"
@@ -78,7 +78,7 @@
         "comportamento_ideal": "",
         "comportamento_atual": "",
         "bdd": "",
-        "status": "Novo",
+        "status": "Aprovado",
         "data_criacao": "2026-02-10 15:23",
         "severidade": "Médio",
         "prioridade": "P2"
@@ -92,7 +92,7 @@
         "comportamento_ideal": "",
         "comportamento_atual": "",
         "bdd": "",
-        "status": "Novo",
+        "status": "No Jira",
         "data_criacao": "2026-02-10 15:23",
         "severidade": "Médio",
         "prioridade": "P2"
@@ -106,7 +106,7 @@
         "comportamento_ideal": "",
         "comportamento_atual": "",
         "bdd": "",
-        "status": "Novo",
+        "status": "Aprovado",
         "data_criacao": "2026-02-10 15:23",
         "severidade": "Médio",
         "prioridade": "P2"
@@ -120,7 +120,7 @@
         "comportamento_ideal": "",
         "comportamento_atual": "",
         "bdd": "",
-        "status": "Novo",
+        "status": "Aprovado",
         "data_criacao": "2026-02-10 15:23",
         "severidade": "Médio",
         "prioridade": "P2"
@@ -134,7 +134,7 @@
         "comportamento_ideal": "",
         "comportamento_atual": "",
         "bdd": "",
-        "status": "Novo",
+        "status": "Aprovado",
         "data_criacao": "2026-02-10 15:24",
         "severidade": "Médio",
         "prioridade": "P2"
@@ -148,7 +148,7 @@
         "comportamento_ideal": "",
         "comportamento_atual": "",
         "bdd": "",
-        "status": "Novo",
+        "status": "No Jira",
         "data_criacao": "2026-02-10 15:24",
         "severidade": "Médio",
         "prioridade": "P2"
@@ -164,7 +164,7 @@
         "bdd": "",
         "status": "Novo",
         "data_criacao": "2026-02-10 15:24",
-        "severidade": NaN,
-        "prioridade": NaN
+        "severidade": "Médio",
+        "prioridade": "P2"
     }
 ]

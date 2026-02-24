@@ -1,0 +1,20 @@
+[
+  {
+    "id": "9998254a",
+    "content": "ID 13: [QuantPlayer- Android TV BOX] - [Movie & Series Listing Screen] - [UI] Movie and Series Listing – Side padding adjustment required i dont now if i should sending it to deav\n\n---\nwhen I click on channels and select a category the app crashes\n\n---\nsuggestao) - ajustar o tamanho das fotnes ( em tv de 50 pol as fontes ficam muito peqyenas)",
+    "color": "#fce4ec",
+    "date": "23/02/2026 16:29 (editada)"
+  },
+  {
+    "id": "3efec654",
+    "content": "= https://1drv.ms/x/c/88246f67742f1429/IQDn3VVdNrlNQY7BagqXiuxwAa8wVzKwV5WcId2x8zzsiRs?e=MP1gbU\n---\nESTOU LOGANDO NO SERVER 555\n---\nUsuário: 13xt666\n🔒 Senha: 38a269x\n\n---\n\npasta do google drive pra upar planlhas = https://drive.google.com/drive/u/3/folders/11me-XJHDh6WZEvR-KOrI4GVPF6XFyghf",
+    "color": "#e1f5fe",
+    "date": "23/02/2026 18:38 (editada)"
+  },
+  {
+    "id": "78a5bf32",
+    "content": "passo a passo pra jogar apl pelo adb\n\n*  cd C:\\adb\\platform-tools>adb\n--\n*   adb connect 192.168.1.128\n \ndeve aparecer connected to 192.168.1.128:5555\n--\n*  adb devices\n\nList of devices attached\n192.168.1.128:5555    device\n--\ndepois coloca o apk na pasta do aadb = \nC:\\adb\\platform-tools\n--\n\n*  adb install nome_do_app.apk",
+    "color": "#e8f5e9",
+    "date": "23/02/2026 16:14 (editada)"
+  }
+]

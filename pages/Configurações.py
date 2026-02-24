@@ -4,7 +4,7 @@ from utils import (
     rename_project, 
     delete_project, 
     export_project_to_excel,
-    render_sidebar
+    render_sidebar, export_project_to_excel_en
 )
 
 # Renderiza a sidebar para manter o seletor de projeto visível
@@ -34,17 +34,38 @@ with tab1:
             st.error(msg)
 
 with tab2:
-    st.write("### Exportar para Excel")
-    try:
-        excel_data = export_project_to_excel(project)
-        st.download_button(
-            "📥 Baixar Planilha Completa",
-            data=excel_data,
-            file_name=f"{project}_backup.xlsx",
-            mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-        )
-    except Exception as e:
-        st.error(f"Erro ao gerar Excel: {e}")
+    st.write("### 📥 Exportar Dados do Projeto")
+    
+    col_exp_pt, col_exp_en = st.columns(2)
+    
+    with col_exp_pt:
+        st.info("Versão em Português (Original)")
+        try:
+            excel_pt = export_project_to_excel(project) # Sua função original corrigida
+            st.download_button(
+                label="🇧🇷 Baixar Planilha PT",
+                data=excel_pt,
+                file_name=f"Relatorio_{project}_PT.xlsx",
+                mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                use_container_width=True
+            )
+        except Exception as e:
+            st.error(f"Erro: {e}")
+
+    with col_exp_en:
+        st.success("Versão em Inglês (Global)")
+        try:
+            excel_en = export_project_to_excel_en(project) # Nova função
+            st.download_button(
+                label="🇺🇸 Download EN Report",
+                data=excel_en,
+                file_name=f"Report_{project}_EN.xlsx",
+                mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                use_container_width=True
+            )
+        except Exception as e:
+            st.error(f"Erro: {e}")
+
 
 with tab3:
     st.write("### ⚠️ Zona de Perigo")

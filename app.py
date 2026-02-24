@@ -10,14 +10,24 @@ import plotly.express as px
 # Importa as funções do nosso arquivo de utilitários
 from utils import (
     get_project_list,
+    handle_translate_new_bug,
     load_bugs,
     save_bugs,
     load_validations,
     save_validation, 
     get_all_test_cases,
     render_sidebar,
-    load_project_notes,      # 👈 ADD
-    save_project_notes       # 👈 ADD
+    load_project_notes,
+    save_project_notes,
+    # --- ADICIONE ESTAS 3 LINHAS ABAIXO ---
+    save_evidence,
+    get_evidence_files,
+    delete_evidence_file, 
+    generate_pro_title_with_gpt, 
+    handle_translate_bug, 
+    delete_bug, add_project_note, 
+    delete_project_note,
+    update_project_note
 )
 
 st.markdown("""
@@ -205,19 +215,33 @@ if "bug_to_validate" in st.session_state:
         bug_id = int(bug_data['id'])
         if "validation_report_text" not in st.session_state:
             if validation_type == "Aprovado":
-                template = f"""[Validação de Teste - ✅ APROVADO]
-Feature/Bug Testado: [{project}] - [{bug_data['tela']}] - {bug_data['titulo']}.
-Resultado:
+                template = f"""
+========================================================
+[Validação de Teste - ✅ APROVADO]
+========================================================
+REPORT ID: - {bug_data['id']}
+APP: {project}
+TITLE: {bug_data['titulo']}
+========================================================
+
+RESULTADO:
 O teste foi executado no dia {datetime.now().strftime('%d/%m/%Y')} e a correção foi APROVADA com sucesso.
-Detalhes:
+DETALHES:
 O comportamento esperado '{bug_data['comportamento_ideal']}' foi observado. O problema original '{bug_data['comportamento_atual']}' não ocorre mais.
 Nenhum efeito colateral (regressão) foi encontrado nos outros elementos da tela."""
             else:
-                template = f"""[Validação de Teste - ❌ REPROVADO]
-Feature/Bug Testado: [{project}] - [{bug_data['tela']}] - {bug_data['titulo']}.
-Resultado:
+                template = f"""
+========================================================
+[Validação de Teste - ❌ REPROVADO]
+========================================================
+REPORT ID: - {bug_data['id']}
+APP: {project}
+TITLE: {bug_data['titulo']}
+========================================================
+
+RESULTADO:
 O teste foi executado no dia {datetime.now().strftime('%d/%m/%Y')} e a correção foi REPROVADA.
-Detalhes:
+DETALHES:
 O problema original ainda ocorre. 
 '{bug_data['comportamento_atual']}'
 
@@ -281,26 +305,90 @@ validations = load_validations(project)
 
 
 st.markdown("---")
-st.subheader("📝 Notas do Projeto")
 
-project_notes = load_project_notes(project)
+# --- 1. INICIALIZAÇÃO (ADICIONE ESTE BLOCO AQUI) ---
+if "editing_note_id" not in st.session_state:
+    st.session_state.editing_note_id = None
 
-notes_text = st.text_area(
-    "Anotações do Projeto",
-    value=project_notes.get("content", ""),
-    height=200
-)
+# Agora o código abaixo vai funcionar porque a variável já existe no estado da sessão
+is_editing_note = st.session_state.editing_note_id is not None
 
-col1, col2 = st.columns([0.2, 0.8])
+# --- DROP DOWN (EXPANDER) DO MURAL ---
+with st.expander("📌 Mural de Notas (Post-its)", expanded=is_editing_note):
+    
+    # --- Formulário para Nova Nota ---
+    with st.expander("➕ Criar Novo Post-it"):
+        with st.form("new_note_form"):
+            note_content = st.text_area("Conteúdo da nota:", placeholder="Ex: Credenciais, links importantes...")
+            col_c1, col_c2 = st.columns([0.3, 0.7])
+            note_color = col_c1.selectbox("Cor:", ["Amarelo", "Azul", "Verde", "Rosa"])
+            
+            color_map = {"Amarelo": "#fff9c4", "Azul": "#e1f5fe", "Verde": "#e8f5e9", "Rosa": "#fce4ec"}
+            
+            if st.form_submit_button("Fixar no Mural"):
+                if note_content:
+                    from utils import add_project_note # Garante import
+                    add_project_note(project, note_content, color_map[note_color])
+                    st.rerun()
+                else:
+                    st.warning("Escreva algo na nota antes de salvar.")
 
-if col1.button("💾 Salvar Notas"):
-    save_project_notes(project, notes_text)
-    st.toast("Notas do projeto salvas com sucesso!")
+    st.markdown("---")
 
-if project_notes.get("last_update"):
-    col2.caption(f"Última atualização: {project_notes['last_update']}")
+    # --- Exibição das Notas em Grid ---
+    from utils import load_project_notes, update_project_note, delete_project_note
+    all_notes = load_project_notes(project)
 
+    if not all_notes:
+        st.info("Nenhuma nota fixada ainda.")
+    else:
+        cols_per_row = 3
+        color_map = {"Amarelo": "#fff9c4", "Azul": "#e1f5fe", "Verde": "#e8f5e9", "Rosa": "#fce4ec"}
 
+        for i in range(0, len(all_notes), cols_per_row):
+            row_notes = all_notes[i : i + cols_per_row]
+            cols = st.columns(cols_per_row)
+            
+            for idx, note in enumerate(row_notes):
+                with cols[idx]:
+                    # Agora o session_state.editing_note_id está garantido!
+                    if st.session_state.editing_note_id == note['id']:
+                        # --- MODO EDIÇÃO ---
+                        with st.container(border=True):
+                            new_content = st.text_area("Editar nota:", value=note['content'], key=f"edit_val_{note['id']}", height=150)
+                            new_color_name = st.selectbox("Cor:", list(color_map.keys()), 
+                                                         index=list(color_map.values()).index(note['color']),
+                                                         key=f"edit_col_{note['id']}")
+                            
+                            c1, c2 = st.columns(2)
+                            if c1.button("💾 Salvar", key=f"save_{note['id']}", type="primary", use_container_width=True):
+                                update_project_note(project, note['id'], new_content, color_map[new_color_name])
+                                st.session_state.editing_note_id = None
+                                st.rerun()
+                            if c2.button("Cancelar", key=f"cancel_{note['id']}", use_container_width=True):
+                                st.session_state.editing_note_id = None
+                                st.rerun()
+                    else:
+                        # --- MODO VISUALIZAÇÃO (POST-IT) ---
+                        postit_html = f"""
+                        <div style="background-color:{note['color']}; padding:15px; border-radius:10px; border-left: 5px solid rgba(0,0,0,0.1); box-shadow: 2px 2px 5px rgba(0,0,0,0.1); min-height: 180px; margin-bottom: 10px; color: #333;">
+                            <small style="color: #666; display: block; margin-bottom: 8px;">{note['date']}</small>
+                            <div style="white-space: pre-wrap; word-wrap: break-word; overflow-wrap: anywhere; word-break: break-word;">
+                                {note['content']}
+                            </div>
+                        </div>
+                        """
+                        st.markdown(postit_html, unsafe_allow_html=True)
+                        
+                        # Botões de Ação
+                        bc1, bc2 = st.columns([0.5, 0.5])
+                        if bc1.button("✏️ Editar", key=f"btn_edit_{note['id']}", use_container_width=True):
+                            st.session_state.editing_note_id = note['id']
+                            st.rerun()
+                            
+                        if bc2.button("🗑️ Remover", key=f"del_note_{note['id']}", use_container_width=True):
+                            delete_project_note(project, note['id'])
+                            st.rerun()
 st.markdown("---")
 
 if 'editing_bug_id' in st.session_state:
@@ -335,29 +423,37 @@ if 'editing_bug_id' in st.session_state:
 
         atual = st.text_area("Atual", value=bug_data['comportamento_atual'], height=100, key="edit_atual")
         bdd = st.text_area("Cenário BDD", value=bug_data.get('bdd', ''), height=150, key="edit_bdd")
-        c1, c2, c3, _ = st.columns([.25, .2, .2, .35])
-        if c1.form_submit_button("🤖 Refinar com IA", on_click=handle_refine_edited_bug):
+# Corrigido: Agora temos c1, c2, c3 e c4
+        c1, c2, c3, c4 = st.columns([0.25, 0.25, 0.2, 0.3])
+        
+        if c1.form_submit_button("🤖 Refinar com IA"):
+            handle_refine_edited_bug()
             st.rerun()
-        if c2.form_submit_button("💾 Salvar"):
+
+        if c2.form_submit_button("🌎 Traduzir p/ Inglês"):
+            handle_translate_bug()
+            st.rerun()
+
+        if c3.form_submit_button("💾 Salvar"):
             idx_to_update = bugs_df.index[bugs_df['id'] == bug_id].item()
+            # Usamos st.session_state para garantir que pegamos o texto (mesmo se foi traduzido/refinado)
             bugs_df.loc[idx_to_update, 'titulo'] = st.session_state.edit_titulo
             bugs_df.loc[idx_to_update, 'tela'] = tela
             bugs_df.loc[idx_to_update, 'modulo'] = modulo
             bugs_df.loc[idx_to_update, 'descricao'] = st.session_state.edit_descricao
             bugs_df.loc[idx_to_update, 'comportamento_ideal'] = st.session_state.edit_ideal
             bugs_df.loc[idx_to_update, 'comportamento_atual'] = st.session_state.edit_atual
-            bugs_df.loc[idx_to_update, 'comportamento_atual'] = st.session_state.edit_atual
-            bugs_df.loc[idx_to_update, 'comportamento_atual'] = st.session_state.edit_atual
             bugs_df.loc[idx_to_update, 'severidade'] = st.session_state.edit_severidade
             bugs_df.loc[idx_to_update, 'prioridade'] = st.session_state.edit_prioridade
-
             bugs_df.loc[idx_to_update, 'status'] = status
             bugs_df.loc[idx_to_update, 'bdd'] = st.session_state.edit_bdd
+            
             save_bugs(project, bugs_df)
             st.success("Bug atualizado!")
             stop_editing()
             st.rerun()
-        if c3.form_submit_button("Cancelar"):
+
+        if c4.form_submit_button("Cancelar"):
             stop_editing()
             st.rerun()
 
@@ -386,19 +482,52 @@ elif 'bug_analysis_result' in st.session_state:
         )
         bdd_refinado = st.text_area("Cenário BDD Sugerido", value=refined_data.get("cenario_bdd", ""), height=200)
 
-        c1, c2, _ = st.columns([.2, .2, .6])
+        c1, c2, c3 = st.columns([0.2, 0.3, 0.5])
         if c1.form_submit_button("✅ Salvar", type="primary"):
             new_id = int(bugs_df['id'].max() + 1) if not bugs_df.empty else 1
-            new_bug = {'id': new_id, 'titulo': titulo_refinado, 'tela': tela_refinada, 'modulo': modulo_refinado,
-                       'descricao': descricao_refinada, 'comportamento_ideal': ideal_refinado, 'comportamento_atual': atual_refinado, 
-                       'severety': severety_refinada, 'priority': priority_refinada,
-                       'bdd': bdd_refinado, 'status': 'Novo', 'data_criacao': datetime.now().strftime("%Y-%m-%d %H:%M")}
+            new_bug = {
+                'id': new_id, 'titulo': titulo_refinado, 'tela': tela_refinada, 'modulo': modulo_refinado,
+                'descricao': descricao_refinada, 'comportamento_ideal': ideal_refinado, 'comportamento_atual': atual_refinado, 
+                'severidade': severety_refinada, 'prioridade': priority_refinada,
+                'bdd': bdd_refinado, 'status': 'Novo', 'data_criacao': datetime.now().strftime("%Y-%m-%d %H:%M")
+            }
             bugs_df = pd.concat([bugs_df, pd.DataFrame([new_bug])], ignore_index=True)
-            save_bugs(project, bugs_df); st.success("Bug registrado!"); stop_editing(); st.rerun()
-        if c2.form_submit_button("Descartar"): stop_editing(); st.rerun()
+            save_bugs(project, bugs_df)
+            st.success("Bug registrado!")
+            stop_editing()
+            st.rerun()
+            
+        if c2.form_submit_button("🌎 Traduzir p/ Inglês"):
+    # Chama a função de tradução específica para novos bugs
+                handle_translate_new_bug() 
+                st.rerun()
+
+        if c3.form_submit_button("Descartar"): stop_editing(); st.rerun()
 
 else:
     st.header("➕ Registrar Novo Bug")
+
+    with st.expander("🪄 Ajudante: Transformar Rascunho em Título Técnico"):
+        rascunho_input = st.text_area(
+        "Cole aqui sua ideia bruta do bug:",
+        placeholder="Ex: [Suggestion - When the user navigates to the first or last channel...]",
+        key="rascunho_helper"
+        )
+
+        if st.button("✨ Gerar Título Profissional"):
+            if rascunho_input:
+                with st.spinner("Refinando..."):
+                    titulo_refinado = generate_pro_title_with_gpt(rascunho_input)
+                    if titulo_refinado:
+                        st.markdown("---")
+                        st.markdown("**Sugestão de Título Técnico:**")
+                        st.code(titulo_refinado) # Exibe em bloco de código para facilitar a cópia
+                        st.caption("💡 Você pode copiar este título e usar no campo de registro abaixo.")
+            else:
+                st.warning("Por favor, cole um rascunho primeiro.")
+
+            st.markdown("---")
+
     tab_rapido, tab_completo = st.tabs(["⚡ Registro Rápido", "🤖 Registro Completo com IA"])
     with tab_rapido:
         st.info("Use esta aba para registrar um bug rapidamente com as informações essenciais.")
@@ -406,12 +535,15 @@ else:
             quick_titulo = st.text_input("Título do Bug *")
             c1, c2 = st.columns(2)
             quick_tela = c1.text_input("Tela / URL"); quick_modulo = c2.text_input("Módulo")
+            c3  = st.columns(1)
+            quick_description = c1.text_input("Descrição do Bug")
+
             if st.form_submit_button("💾 Salvar Bug Rápido", type="primary"):
                 if not quick_titulo:
                     st.error("O campo 'Título' é obrigatório.")
                 else:
                     new_id = int(bugs_df['id'].max() + 1) if not bugs_df.empty else 1
-                    new_bug = {'id': new_id, 'titulo': quick_titulo, 'tela': quick_tela, 'modulo': quick_modulo, 'descricao': "", 'comportamento_ideal': "", 'comportamento_atual': "", 'bdd': "", 'status': 'Novo', 'data_criacao': datetime.now().strftime("%Y-%m-%d %H:%M")}
+                    new_bug = {'id': new_id, 'titulo': quick_titulo, 'tela': quick_tela, 'modulo': quick_modulo, 'descricao': quick_description, 'comportamento_ideal': "", 'comportamento_atual': "", 'bdd': "", 'status': 'Novo', 'data_criacao': datetime.now().strftime("%Y-%m-%d %H:%M")}
                     bugs_df = pd.concat([bugs_df, pd.DataFrame([new_bug])], ignore_index=True)
                     save_bugs(project, bugs_df); st.success(f"Bug rápido '{quick_titulo}' registrado com sucesso!"); st.rerun()
     with tab_completo:
@@ -561,6 +693,16 @@ for status in BUG_STATUS_OPTIONS:
                         help="Editar Detalhes"
                     )
 
+                    with action_cols_1[2]:
+                    # NOVO: Botão Excluir com confirmação simples
+                        with st.popover("🗑️", help="Excluir Bug"):
+                            st.warning("Confirmar exclusão?")
+                            if st.button("Sim, excluir", key=f"confirm_del_{bug_id}", type="primary"):
+                                delete_bug(project, bug_id)
+                                st.toast(f"Bug {bug_id} excluído com sucesso!")
+                                st.rerun()
+
+
                 if bug['status'] in ["Arrumado", "Em Teste", "Reprovado"]:
                     with action_cols_1[2]:
                         st.button(
@@ -579,46 +721,91 @@ for status in BUG_STATUS_OPTIONS:
                             help="Gerar Relatório de Reprovação"
                         )
 
-                action_cols_2 = st.columns([0.5, 0.5])
+                action_cols_2 = st.columns([0.34, 0.33, 0.33])
 
                 with action_cols_2[0]:
                     st.button(
                         "📋 Ver Título",
                         key=f"view_title_{bug_id}",
                         on_click=show_text_in_dialog,
-                        args=(display_title, "Título para Cópia")
+                        args=(display_title, "Título para Cópia"),
+                        use_container_width=True
                     )
 
+                # --- RELATÓRIO EM INGLÊS (GRINGA) ---
                 with action_cols_2[1]:
-                    report_text = f"""Relatório: {bug['titulo']}
+                    report_en = f"""
+========================================================
+REPORT #{bug['id']} | {project}
+========================================================
+TITLE: {bug['titulo']}
 
-- Tela/URL: {bug['tela']}
-- Módulo: {bug['modulo']}
+SCREEN: {bug['tela']}
+MODULE: {bug['modulo']}
+--------------------------------------------------------
+SEVERITY: {bug['severidade']}
+PRIORITY: {bug['prioridade']}
+--------------------------------------------------------
 
---- Severidade: {bug['severidade']}
---- Prioridade: {bug['prioridade']}
-
----
-Passos para Reprodução:
+STEPS TO REPRODUCE:
 {bug['descricao']}
 
----
-Comportamento Ideal:
+EXPECTED BEHAVIOR:
 {bug['comportamento_ideal']}
 
----
-Comportamento Atual:
+ACTUAL BEHAVIOR:
 {bug['comportamento_atual']}
 
----
-BDD:
+--------------------------------------------------------
+BDD SCENARIO:
 {bug['bdd']}
-"""
+========================================================"""
+                    
                     st.button(
-                        "📄 Ver Relatório",
-                        key=f"view_report_{bug_id}",
+                        "🌎 Report (EN)",
+                        key=f"view_report_en_{bug_id}",
                         on_click=show_text_in_dialog,
-                        args=(report_text, "Relatório para Cópia")
+                        args=(report_en, "Bug Report (English)"),
+                        help="Gerar relatório formatado para o time internacional",
+                        use_container_width=True
+                    )
+
+                # --- RELATÓRIO EM PORTUGUÊS (LOCAL) ---
+                with action_cols_2[2]:
+                    report_pt = f"""
+========================================================
+RELATÓRIO #{bug['id']} | {project}
+========================================================
+TÍTULO: {bug['titulo']}
+
+TELA: {bug['tela']}
+MÓDULO: {bug['modulo']}
+--------------------------------------------------------
+SEVERIDADE: {bug['severidade']}
+PRIORIDADE: {bug['prioridade']}
+--------------------------------------------------------
+
+PASSOS PARA REPRODUÇÃO:
+{bug['descricao']}
+
+COMPORTAMENTO IDEAL:
+{bug['comportamento_ideal']}
+
+COMPORTAMENTO ATUAL:
+{bug['comportamento_atual']}
+
+--------------------------------------------------------
+CENÁRIO BDD:
+{bug['bdd']}
+========================================================"""
+
+                    st.button(
+                        "📄 Relatório (PT)",
+                        key=f"view_report_pt_{bug_id}",
+                        on_click=show_text_in_dialog,
+                        args=(report_pt, "Relatório de Bug (Português)"),
+                        help="Gerar relatório formatado em Português",
+                        use_container_width=True
                     )
 
                 if bug['status'] in ["Aprovado", "Reprovado"]:
@@ -626,12 +813,50 @@ BDD:
                     if bug_validations:
                         last_validation = bug_validations[-1]
                         with st.container(border=True):
-                            st.markdown(
-                                f"**Último Relatório de Validação ({last_validation['date']}):**"
-                            )
+                            st.markdown(f"**Último Relatório de Validação ({last_validation['date']}):**")
                             st.text(last_validation['report'])
 
-                st.markdown("---")
+                # --- SEÇÃO DE EVIDÊNCIAS (INSERIR AQUI) ---
+                st.markdown("##### 📸 Evidências")
+                
+                # 1. Galeria de Visualização
+                evid_files = get_evidence_files(project, bug_id)
+                if evid_files:
+                    # Cria colunas para organizar as miniaturas
+                    cols_evid = st.columns(3)
+                    for f_idx, f_path in enumerate(evid_files):
+                        with cols_evid[f_idx % 3]:
+                            ext = os.path.splitext(f_path)[1].lower()
+                            file_name = os.path.basename(f_path)
+                            
+                            if ext in [".png", ".jpg", ".jpeg", ".gif"]:
+                                st.image(f_path, use_container_width=True)
+                            elif ext in [".mp4", ".mov", ".avi", ".webm", ".WEBM"]:
+                                st.video(f_path)
+                            
+                            # Botão para deletar evidência específica
+                            if st.button("🗑️", key=f"del_evid_{bug_id}_{f_idx}", help=f"Excluir {file_name}"):
+                                delete_evidence_file(f_path)
+                                st.rerun()
+                else:
+                    st.caption("Nenhuma evidência anexada a este bug.")
+
+                # 2. Upload de novas evidências
+                with st.expander("➕ Adicionar Fotos/Vídeos"):
+                    uploaded = st.file_uploader(
+                        "Arraste arquivos aqui", 
+                        type=["png", "jpg", "jpeg", "mp4", "mov", "webm", "mpeg4", "avi"], 
+                        accept_multiple_files=True, 
+                        key=f"upload_{bug_id}" # Key única por bug
+                    )
+                    if st.button("Salvar Evidências", key=f"btn_save_evid_{bug_id}"):
+                        if uploaded:
+                            save_evidence(project, bug_id, uploaded)
+                            st.toast("Evidências salvas!")
+                            st.rerun()
+
+                st.markdown("---") # Linha final que separa um bug do outro
+
 
                 
 st.header("📊 Dashboard do Projeto")

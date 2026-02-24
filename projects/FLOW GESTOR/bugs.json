@@ -9,7 +9,9 @@
         "comportamento_atual": "Atualmente, o sistema está sincronizando usuários mesmo que estejam na lixeira.",
         "bdd": "Cenário: Sincronização e envio de mensagem para usuários expirados em até 5 dias ou a expirar em até 5 dias\nDado que existem usuários usuários expirados em até 5 dias ou a expirar em até 5 dias\n no wplay\nE que existem usuários na lixeira no mesmo intervado de expiração\nQuando a data de expiração de um usuário ativo estiver dentro de 5 dias ou tiver passado dos 5 dias\nEntão o sistema deve sincronizar apenas os usuários que nao foram adicionados a lixeira\nE enviar mensagem via WhatsApp para os usuários (que não foram adicionados a lixeira) expirados ou a expirar  no intervalo mencioado",
         "status": "Aprovado",
-        "data_criacao": "2025-10-11 18:32"
+        "data_criacao": "2025-10-11 18:32",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 2,
@@ -21,7 +23,9 @@
         "comportamento_atual": "A cor do texto do botão não atualiza corretamente quando o aplicativo está no modo noturno",
         "bdd": "Funcionalidade: Ajuste de cor do texto do botão no modo noturno\nDado que o aplicativo está no modo noturno\nQuando o usuário clica na exclusão de um seridor\nEntão o texto do botão  na modal de confirmação deve ser claramente visível no modo noturno",
         "status": "Aprovado",
-        "data_criacao": "2025-10-11 18:43"
+        "data_criacao": "2025-10-11 18:43",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 3,
@@ -33,7 +37,9 @@
         "comportamento_atual": "Quando um email inválido é inserido no formulário de cadastro-e/ou login , nenhuma validação de formato de email é exibida ao usuário.",
         "bdd": "Cenário: Validar formato de email na tela de cadastro\nDado que o usuário está na tela de cadastro\nQuando o usuário inserir um email inválido\nE submeter o formulário\nEntão o sistema deve exibir uma mensagem de erro indicando que o email inserido é inválido",
         "status": "Aprovado",
-        "data_criacao": "2025-10-13 10:04"
+        "data_criacao": "2025-10-13 10:04",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 4,
@@ -45,7 +51,9 @@
         "comportamento_atual": "Ao tentar gerar o QR Code para ativar o whatsapp, ocorre uma falha no processo",
         "bdd": "Cenário: Gerar QR Code de ativação do Whatsapp\nDado que o usuário está no aplicativo\nQuando o usuário clica no ícone do whatsapp\nE clica em 'Adicionar whatsapp' no menu lateral\nEntão o sistema deve gerar o QR Code corretamente e conectar o whatsapp",
         "status": "Reprovado",
-        "data_criacao": "2025-10-14 13:07"
+        "data_criacao": "2025-10-14 13:07",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 5,
@@ -57,7 +65,9 @@
         "comportamento_atual": "O URL de webhook no drawer de gateway não está correto, impedindo a sincronização adequada com o Bpix.",
         "bdd": "Cenário: Correção de URL de Webhook para sincronização com o Bpix\nDado que eu tenha a API key do Bpix\nE eu esteja no drawer de gateway\nQuando eu colar a API key do Bpix no drawer\nEntão devo verificar se o URL de webhook no drawer está correto",
         "status": "Aprovado",
-        "data_criacao": "2025-10-14 13:13"
+        "data_criacao": "2025-10-14 13:13",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 6,
@@ -69,7 +79,9 @@
         "comportamento_atual": "Ao navegar para o último item da seleção de Temporadas e pressionar 'direita', o foco de navegação vaza para a seção de seleção de Episódios.",
         "bdd": "Cenário: Foco corretamente mantido ao navegar entre Temporadas e Episódios\nDado que uma série foi selecionada e a sessão de seleção de Temporadas está acessível\nQuando o usuário navega até o último item da sessão de Temporadas e pressiona a tecla 'direita'\nEntão o sistema deve manter o foco na seleção de Temporadas e não vazar para a seção de Episódios",
         "status": "Aprovado",
-        "data_criacao": "2025-10-21 10:06"
+        "data_criacao": "2025-10-21 10:06",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 7,
@@ -81,7 +93,9 @@
         "comportamento_atual": "Após o cliente gerar e pagar um pagamento da TVS, o plano do cliente não está sendo estendido como deveria.",
         "bdd": "Cenário: Extensão do plano do cliente após pagamento na integração com TVS\n\nDado que o cliente gerou um pagamento de um servidor da TVS\nQuando o cliente realiza o pagamento\nEntão o plano do cliente deve ser automaticamente estendido pelo mesmo período do pagamento e atualizado no flow gestor e no painel da TVS",
         "status": "No Jira",
-        "data_criacao": "2025-10-24 09:33"
+        "data_criacao": "2025-10-24 09:33",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 8,
@@ -93,7 +107,9 @@
         "comportamento_atual": "",
         "bdd": "",
         "status": "Aprovado",
-        "data_criacao": "2025-10-27 14:06"
+        "data_criacao": "2025-10-27 14:06",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 9,
@@ -105,7 +121,9 @@
         "comportamento_atual": "Atualmente, o ícone de fechamento de algumas modais não está visivel ao usuário",
         "bdd": "Cenário: Fechar modal\nDado que um modal está aberto na aplicação\nQuando o usuário tenta clicar no ícone de fechamento do modal\nEntão o modal deve ser fechado corretamente",
         "status": "Aprovado",
-        "data_criacao": "2025-12-18 10:22"
+        "data_criacao": "2025-12-18 10:22",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 10,
@@ -117,7 +135,9 @@
         "comportamento_atual": "A imagem do membro carrega corretamente durante a edição, mas não é salva quando as alterações são confirmadas, DANDO ERRO 500",
         "bdd": "Cenário: upload de imagem de membro\nDado que estou na tela de configurações\nE acesso a seção de membros\nE edito um membro\nQuando faço upload de uma nova imagem para o membro\nE confirmo as alterações\nEntão a nova imagem do membro deve ser salva com sucesso",
         "status": "Aprovado",
-        "data_criacao": "2026-01-08 10:00"
+        "data_criacao": "2026-01-08 10:00",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 11,
@@ -129,7 +149,9 @@
         "comportamento_atual": "A funcionalidade de edição não está funcionando para Clientes, Revendedores e Cupons de Desconto. Ao clicar na opção Editar (via menu de três pontos), nenhuma ação é executada.",
         "bdd": "Cenário: Edição de cliente, revendedor ou cupom de desconto\nDado que estou conectado com um servidor \nE que foi criado clientes, cupons e revendedores\nE acessei a opção 'Planos e Preços' na barra lateral\nQuando seleciono um item da categoria desejada\nE tento editar o item selecionado\nEntão a interface de edição deve ser exibida corretamente",
         "status": "Aprovado",
-        "data_criacao": "2026-01-19 08:37"
+        "data_criacao": "2026-01-19 08:37",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 12,
@@ -141,7 +163,9 @@
         "comportamento_atual": "Ao clicar no botão Adicionar Testes no módulo Testes, a modal de criação de usuário de teste não é exibida, impedindo o cadastro.",
         "bdd": "Cenário: Falha ao abrir modal de criação de usuário de teste\nDado que o usuário está no módulo Testes\nQuando o usuário clica no botão Adicionar Testes\nEntão a modal de criação de usuário de teste não é exibida",
         "status": "Aprovado",
-        "data_criacao": "2026-01-19 08:45"
+        "data_criacao": "2026-01-19 08:45",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 13,
@@ -153,7 +177,9 @@
         "comportamento_atual": "As telas Meus Usuários e Testes estão exibindo a mesma listagem de usuários ativos, ao invés de apresentar conjuntos distintos de dados como esperado.",
         "bdd": "Cenário: Verificar a exibição correta de usuários ativos e de testes\nDado que estou logado no sistema como um usuário servidor concetado\nQuando eu acesso a tela Testes\nEntão devo ver apenas os testes ativos relacionados ao servidor conectado\n",
         "status": "Aprovado",
-        "data_criacao": "2026-01-19 08:52"
+        "data_criacao": "2026-01-19 08:52",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 14,
@@ -165,7 +191,9 @@
         "comportamento_atual": "Ao realizar a sincronização do servidor da Wplay no Flow Gestor,  não é trazido os testes ativos e inativos vindos da wplay, apenas os testes criados diretamente no Flow Gestor são exibidos, ignorando os testes ativos e inativos já existentes no servidor da Wplay.",
         "bdd": "Cenário: Sincronização com servidor da Wplay exibe todos os testes\n Dado que o usuário está no Flow Gestor\n Quando o usuário realiza a sincronização com o servidor da Wplay\n Então o sistema deve exibir todos os testes ativos e inativos existentes no servidor da Wplay, além dos testes criados no Flow Gestor",
         "status": "Aprovado",
-        "data_criacao": "2026-01-20 08:18"
+        "data_criacao": "2026-01-20 08:18",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 15,
@@ -177,7 +205,9 @@
         "comportamento_atual": "Após a criação do teste, a página não é atualizada automaticamente para exibir o novo teste criado. É necessário recarregar manualmente a página para visualizar o novo teste.",
         "bdd": "Cenário: Atualização automática da página após criação de novo teste\nDado que estou logado no Flow Gestor\nE estou na tela de testes\nQuando eu crio um novo teste pelo Flow Gestor e finalizo a criação\nEntão a página deve atualizar automaticamente a lista de testes, exibindo o novo teste criado",
         "status": "Aprovado",
-        "data_criacao": "2026-01-20 08:25"
+        "data_criacao": "2026-01-20 08:25",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 16,
@@ -189,7 +219,9 @@
         "comportamento_atual": "Durante a sincronização, o Flow Gestor importa e exibe revendedores bloqueados (com status = 0) do servidor da WPlay.",
         "bdd": "Feature: Sincronização com WPlay não deve trazer revendedores bloqueados\n\nScenario: Exibir apenas revendedores ativos após sincronização\n\nGiven Eu estou no Flow Gestor\nWhen Eu inicio a sincronização com o servidor da WPlay\nAnd Eu acesso a aba de revendedores após a sincronização\nThen Apenas revendedores com status = 1 são exibidos",
         "status": "No Jira",
-        "data_criacao": "2026-01-20 08:32"
+        "data_criacao": "2026-01-20 08:32",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 17,
@@ -201,7 +233,9 @@
         "comportamento_atual": "O sistema permite tentar criar o revendedor com uma quantidade de créditos inferior ao mínimo exigido pela WPlay. Ao enviar a solicitação, a WPlay barra a criação, o Flow Gestor retorna erro e o usuário não é previamente informado da regra de créditos mínimos.",
         "bdd": "Cenário: Validar créditos mínimos na criação de revendedores\nDado que estou no Flow Gestor\nQuando eu navegar até a tela de criação de revendedor\nE selecionar a categoria de revendedor como Comum\nE informar uma quantidade de créditos menor que 10\nEntão o sistema deve exibir uma mensagem de erro informando sobre os créditos mínimos necessários\n\nCenário: Validar créditos mínimos na criação de revendedor Master\nDado que estou no Flow Gestor\nQuando eu navegar até a tela de criação de revendedor\nE selecionar a categoria de revendedor como Master\nE informar uma quantidade de créditos menor que 50\nEntão o sistema deve exibir uma mensagem de erro informando sobre os créditos mínimos necessários",
         "status": "Aprovado",
-        "data_criacao": "2026-01-20 08:43"
+        "data_criacao": "2026-01-20 08:43",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 18,
@@ -213,7 +247,9 @@
         "comportamento_atual": "O sistema permite inserir espaços no campo 'Nome de usuário'. \nAo enviar o formulário, a criação do revendedor retorna erro 400, sem validação prévia.",
         "bdd": "Cenário: Validar campo 'Nome de usuário' ao criar revendedor sem espaços\nDado que estou no Flow Gestor\nE navego até a tela de criação de novo revendedor\nQuando eu informo um nome com espaços no campo 'Nome de usuário'\nE tento salvar/criar o revendedor\nEntão devo ver uma mensagem de erro indicando que o nome de usuário não pode conter espaços\n",
         "status": "No Jira",
-        "data_criacao": "2026-01-20 08:51"
+        "data_criacao": "2026-01-20 08:51",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 19,
@@ -225,7 +261,9 @@
         "comportamento_atual": "O sistema permite reconectar um servidor que já está conectado, causando duplicação de dados, incluindo usuários, testes e revendedores.",
         "bdd": "Cenário: Impedir reconexão de servidor já conectado\nDado que estou no Flow Gestor\nQuando conecto o servidor da WPlay 'Ricardoport'\nE tento reconectar o mesmo servidor\nEntão o sistema deve exibir uma mensagem de erro informando que o servidor já está conectado e não permitir a reconexão",
         "status": "No Jira",
-        "data_criacao": "2026-01-20 09:44"
+        "data_criacao": "2026-01-20 09:44",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 20,
@@ -237,7 +275,9 @@
         "comportamento_atual": "Atualmente, não fica claro qual é o critério de quantidade de créditos utilizado pelo sistema para que um revendedor seja enquadrado e exibido na coluna 'Pouco Crédito'. Não se sabe se há um valor fixo de créditos, se o critério varia conforme o tipo de revendedor (Comum / Master) ou se o valor é configurável no sistema.",
         "bdd": "Cenário: Definição do critério de créditos para enquadramento na coluna 'Pouco Crédito'\nDado que estou no Flow Gestor\nE acessei a tela de listagem de revendedores\nQuando observo a coluna 'Pouco Crédito'\nEntão devo saber claramente qual é o critério de quantidade de créditos utilizado pelo sistema",
         "status": "No Jira",
-        "data_criacao": "2026-01-20 09:54"
+        "data_criacao": "2026-01-20 09:54",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 21,
@@ -249,7 +289,9 @@
         "comportamento_atual": "Atualmente, os revendedores sincronizados estão sendo exibidos apenas na coluna de novos, devido à falta do campo de recharge que deveria filtrá-los adequadamente de acordo com o tempo sem recargas. colocalos na coluna de +30 dias sem recargae ",
         "bdd": "Cenário: Filtro de revendedores sincronizados por recarga\nDado que estou na lista de revendedores no FlowGestor\nQuando verifico as colunas de novos, mais de 30 dias sem recarga, pouco crédito e recargas\nEntão devo ver todos os revendedores que estão a mais de 30 dias sem recarga na coluna de +30 dias sem recarga\n",
         "status": "No Jira",
-        "data_criacao": "2026-01-20 10:00"
+        "data_criacao": "2026-01-20 10:00",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 22,
@@ -261,7 +303,9 @@
         "comportamento_atual": "Apesar de o campo Target Audience ser alterado no frontend (select), ao salvar, o cupom continua com o valor original. Por exemplo, permanece como Revendedores, mesmo após selecionar Clientes. As demais informações do cupom são salvas corretamente.",
         "bdd": "Cenário: Atualizar campo Target Audience ao editar cupom de desconto\nDado que estou no Flow Gestor\nE navego até a listagem de cupons de desconto\nE seleciono um cupom existente para edição\nE altero o campo Target Audience para Clientes\nQuando eu salvar as alterações\nEntão o campo Target Audience do cupom deve ser atualizado para Clientes",
         "status": "Reprovado",
-        "data_criacao": "2026-01-21 12:35"
+        "data_criacao": "2026-01-21 12:35",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 23,
@@ -273,7 +317,9 @@
         "comportamento_atual": "O Flowgestor não exibe os testes ativos, expirados ou bloqueados criados diretamente pelo painel da WPlay, mesmo após a sincronização",
         "bdd": "Cenário: Sincronização do servidor WPlay importa todos os testes do painel da WPlay\nDado que estou no painel da WPlay\nE existem testes ativos, expirados, bloqueados criados neste painel de teste \nE estou no Flowgestor\nQuando sincronizo um servidor WPlay \nEntão devo ver todos os testes, CLASSIFICANDO os teste expirados na coluna de inativos e os bloqueados e ativos na coluna de ativos",
         "status": "No Jira",
-        "data_criacao": "2026-01-21 15:05"
+        "data_criacao": "2026-01-21 15:05",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 24,
@@ -285,7 +331,9 @@
         "comportamento_atual": "O sistema não permite a edição de clientes, revendedores ou cupons de desconto pelo menu 'Planos e Preços', pois não executa nenhuma ação após o clique na opção 'Editar'.",
         "bdd": "Cenário: Edição de cliente, revendedor ou cupom de desconto pelo menu 'Planos e Preços'\nDado que estou no menu 'Planos e Preços'\nE seleciono a opção de 'Editar' de um cliente, revendedor ou cupom de desconto\nEntão o sistema deve permitir a edição das informações cadastradas",
         "status": "Aprovado",
-        "data_criacao": "2026-01-21 17:52"
+        "data_criacao": "2026-01-21 17:52",
+        "severidade": "Médio",
+        "prioridade": "P2"
     },
     {
         "id": 25,
@@ -297,6 +345,22 @@
         "comportamento_atual": "Após clicar no botão 'Editar', nenhuma ação é executada, impedindo a alteração das informações cadastradas.",
         "bdd": "Cenário: Edição de informações de clientes, revendedores ou cupons de desconto\nDado que o usuário está na tela de edição\nQuando o usuário clica no botão 'Editar'\nEntão o sistema deve permitir a alteração das informações e salvar corretamente",
         "status": "Aprovado",
-        "data_criacao": "2026-01-21 17:53"
+        "data_criacao": "2026-01-21 17:53",
+        "severidade": "Médio",
+        "prioridade": "P2"
+    },
+    {
+        "id": 26,
+        "titulo": "[Suggestion} - Previous/Next buttons be disabled when navigating to first or last channel of each channel list ",
+        "tela": "",
+        "modulo": "",
+        "descricao": "- Select a category channel\n- 1. Navigate to the first or last channel from that category list \n- 2. Select the channel\n- 3. Channel starts playing in the mini preview component\n- 4. Click on the previous/next button",
+        "comportamento_ideal": "The previous/next buttons should be disabled when there is no before or next channel on the list, preventing the user from clicking them.",
+        "comportamento_atual": "The previous/next buttons are clickable even when there is no before or next channel on the list, resulting in nothing happening.",
+        "bdd": "Feature: Channel Navigation\n\nScenario: Disable previous/next buttons when at first or last channel\nGiven the user is on the first or last channel, from a determined list of channels\nAnd the user has selected a channel\nAnd it is playing in the mini preview component\nWhen the user clicks on the previous/next button\nThen the button should be disabled (depending on the context)",
+        "status": "Aprovado",
+        "data_criacao": "2026-02-18 16:19",
+        "severidade": "Médio",
+        "prioridade": "P2"
     }
 ]

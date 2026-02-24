@@ -22,7 +22,7 @@
         "comportamento_ideal": "",
         "comportamento_atual": "",
         "bdd": "",
-        "status": "No Jira",
+        "status": "Aprovado",
         "data_criacao": "2026-02-09 14:38",
         "severidade": "Médio",
         "prioridade": "P2"
@@ -150,6 +150,20 @@
         "bdd": "",
         "status": "Arrumado",
         "data_criacao": "2026-02-09 14:39",
+        "severidade": "Médio",
+        "prioridade": "P2"
+    },
+    {
+        "id": 12,
+        "titulo": "Bug: Playback continues after screen lock",
+        "tela": "",
+        "modulo": "",
+        "descricao": "- 1. Open the player and play a movie, tv show or channel\n- 2. Lock the phone screen during playback\n- 3. Check if the player continues to play even with the screen locked",
+        "comportamento_ideal": "The player should automatically pause when the phone screen is locked and only resume playback manually after the screen is unlocked.",
+        "comportamento_atual": "The player continues to play  even after the phone screen is locked, which should not happen.",
+        "bdd": "Scenario: Playback continues after screen lock\nGiven that I am watching a movie, TV show, and channel on the player\nWhen I lock the phone screen\nThen the player should automatically pause\nAnd when I unlock the screen, the player should remain paused until I manually unpause it",
+        "status": "No Jira",
+        "data_criacao": "2026-02-20 09:46",
         "severidade": "Médio",
         "prioridade": "P2"
     }
